@@ -8,6 +8,7 @@ import { IoMdClose } from 'react-icons/io';
 import { clsx } from 'clsx';
 import Container from './Container';
 import Logo from './Logo';
+import FadeIn, { FadeInStagger } from './Fadein';
 
 interface HeaderProps {
    panelId: string;
@@ -98,7 +99,7 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({ children }) => {
                   }}
                />
                <Container>
-                  <div className='h-[2px] bg-black w-full mt-12' />
+                  <div className='h-[2px] bg-black w-full mt-16' />
                </Container>
             </div>
          </header>
@@ -128,24 +129,38 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({ children }) => {
                </div>
             </motion.div>
             <Container>
-               <ul className='lg:flex flex-col gap-4 '>
-                  <li className='border-t border-white py-6 '>
-                     <div className='text-large'>Work</div>
-                  </li>
-                  <li className='border-t border-white py-6 '>
-                     <div className='text-large'>About</div>
-                  </li>
-                  <li className='border-t border-white py-6 '>
-                     <div className='text-large'>Contact</div>
-                  </li>
-               </ul>
+               <FadeInStagger>
+                  <ul className='lg:flex flex-col  '>
+                     <li className='border-t border-stone-200 py-6 group  font-bold'>
+                        <FadeIn>
+                           <div className='text-large group-hover:tracking-[30px] lg:group-hover:tracking-[50px]  duration-300 ease-in-out uppercase  '>
+                              Work
+                           </div>
+                        </FadeIn>
+                     </li>
+                     <li className='border-t border-stone-200 py-6 group  font-bold'>
+                        <FadeIn>
+                           <div className='text-large  group-hover:tracking-[30px] lg:group-hover:tracking-[50px]  duration-300 ease-in-out uppercase  '>
+                              About
+                           </div>
+                        </FadeIn>
+                     </li>
+                     <li className='border-t border-stone-200 py-6 group   font-bold'>
+                        <FadeIn>
+                           <div className='text-large group-hover:tracking-[30px] lg:group-hover:tracking-[50px]   duration-300 ease-in-out uppercase  '>
+                              Contact
+                           </div>
+                        </FadeIn>
+                     </li>
+                  </ul>
+               </FadeInStagger>
             </Container>
          </motion.div>
          <motion.div
             layout
             className='relative flex flex-auto overflow-hidden  pt-40 bg-white text-black'
          >
-            <div>main motion div</div>
+            
             <motion.div
                layout
                className='relative isolate flex w-full flex-col pt-9 '

@@ -1,9 +1,10 @@
 import Image from 'next/image';
+import Container from './components/Container'
 
 export default function Home() {
    return (
-      <div className=' bg-blue-500'>
+      <Container >
          <div className='text-5xl underline font-bold'>Hello World!</div>
-      </div>
+      </Container>
    );
 }
