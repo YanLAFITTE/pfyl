@@ -1,69 +1,13 @@
 'use client';
 import { useReducedMotion, MotionConfig, motion } from 'framer-motion';
-import React, { ElementType, ReactNode, useId, useRef, useState } from 'react';
+import React, { ReactNode, useEffect, useId, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { HiMenuAlt4 } from 'react-icons/hi';
 import { IoMdClose } from 'react-icons/io';
-import { clsx } from 'clsx';
 import Container from './Container';
-import Logo from './Logo';
-import FadeIn, { FadeInStagger } from './Fadein';
-
-interface HeaderProps {
-   panelId: string;
-   invert?: boolean;
-   icon: ElementType;
-   expanded: boolean;
-   onToggle: () => void;
-   toggleRef: React.RefObject<HTMLButtonElement | null>;
-}
-
-const Header = ({
-   icon: Icon,
-   invert,
-   onToggle,
-   toggleRef,
-   panelId,
-   expanded,
-}: HeaderProps) => {
-   return (
-      <Container>
-         <div className='flex items-center justify-between '>
-            <Link href={'/'} aria-label='Home'>
-               <h2
-                  className={clsx(
-                     invert
-                        ? 'cursor-pointer text-lg sm:text-xl duration-300 text-white mt-1'
-                        : 'cursor-pointer text-lg sm:text-xl duration-300 text-black mt-1'
-                  )}
-               >
-                  Yan Lafitte
-               </h2>
-            </Link>
-
-            <div>
-               <button
-                  ref={toggleRef as React.RefObject<HTMLButtonElement>}
-                  type='button'
-                  onClick={onToggle}
-                  aria-expanded={expanded}
-                  aria-controls={panelId}
-                  className={clsx('group p-2.5 transition')}
-                  aria-label='Toggle navigation'
-               >
-                  <Icon
-                     className={clsx(
-                        'h-6 w-6 rounded-full',
-                        invert ? 'text-white ' : ' text-black '
-                     )}
-                  />
-               </button>
-            </div>
-         </div>
-      </Container>
-   );
-};
+import Header from './Header';
+import Footer from './Footer';
 
 interface RootLayoutInnerProps {
    children: ReactNode;
@@ -76,6 +20,23 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({ children }) => {
    const closeRef = useRef<HTMLButtonElement | null>(null);
    const navRef = useRef<HTMLDivElement | null>(null);
    const shouldReduceMotion = useReducedMotion();
+
+   useEffect(() => {
+      function onClick(event: MouseEvent) {
+         const target = event.target as HTMLElement | null;
+
+         if (target && target.closest('a')?.href === window.location.href) {
+            setExpanded(false);
+         }
+      }
+
+      window.addEventListener('click', onClick);
+
+      return () => {
+         window.removeEventListener('click', onClick);
+      };
+   }, []);
+
    return (
       <MotionConfig
          transition={shouldReduceMotion ? { duration: 0 } : undefined}
@@ -87,6 +48,7 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({ children }) => {
                data-inert={expanded ? '' : undefined}
             >
                <Header
+                  setExpanded={setExpanded}
                   panelId={panelId}
                   icon={HiMenuAlt4}
                   toggleRef={openRef}
@@ -114,6 +76,7 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({ children }) => {
             <motion.div layout>
                <div ref={navRef} className=' pt-6 lg:pt-14'>
                   <Header
+                     setExpanded={setExpanded}
                      invert
                      panelId={panelId}
                      icon={IoMdClose}
@@ -128,37 +91,37 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({ children }) => {
                   />
                </div>
             </motion.div>
+
             <Container>
-               <FadeInStagger>
-                  <ul className='lg:flex flex-col  pt-4 lg:pt-14'>
+               <ul className='lg:flex flex-col  pt-4 lg:pt-14'>
+                  <Link href='/#work' onClick={() => setExpanded(false)}>
                      <li className='border-t-[1px] border-stone-200 py-6 group  font-bold'>
-                        <FadeIn>
-                           <div className='text-large group-hover:tracking-[30px] lg:group-hover:tracking-[50px]  duration-300 ease-in-out uppercase  '>
-                              Work
-                           </div>
-                        </FadeIn>
+                        <div className='text-large group-hover:tracking-[30px] lg:group-hover:tracking-[50px]  duration-300 ease-in-out uppercase  '>
+                           Work
+                        </div>
                      </li>
+                  </Link>
+                  <Link href='/about' onClick={() => setExpanded(false)}>
                      <li className='border-t-[1px]  border-stone-200 py-6 group  font-bold'>
-                        <FadeIn>
-                           <div className='text-large  group-hover:tracking-[30px] lg:group-hover:tracking-[50px]  duration-300 ease-in-out uppercase  '>
-                              About
-                           </div>
-                        </FadeIn>
+                        <div className='text-large  group-hover:tracking-[30px] lg:group-hover:tracking-[50px]  duration-300 ease-in-out uppercase  '>
+                           About
+                        </div>
                      </li>
+                  </Link>
+                  <Link href='/#contact' onClick={() => setExpanded(false)}>
                      <li className='border-t-[1px]  border-stone-200 py-6 group   font-bold'>
-                        <FadeIn>
-                           <div className='text-large group-hover:tracking-[30px] lg:group-hover:tracking-[50px]   duration-300 ease-in-out uppercase  '>
-                              Contact
-                           </div>
-                        </FadeIn>
+                        <div className='text-large group-hover:tracking-[30px] lg:group-hover:tracking-[50px]   duration-300 ease-in-out uppercase  '>
+                           Contact
+                        </div>
                      </li>
-                  </ul>
-               </FadeInStagger>
+                  </Link>
+               </ul>
             </Container>
          </motion.div>
          <motion.div
             layout
-            className='relative flex flex-auto overflow-hidden  pt-40 bg-white text-black'
+            className='relative flex flex-auto overflow-hidden  pt-40 bg-white text-black '
+            onClick={() => setExpanded(false)}
          >
             <motion.div
                layout
@@ -177,7 +140,12 @@ interface RootLayoutProps {
 
 const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
    const pathName = usePathname();
-   return <RootLayoutInner>{children}</RootLayoutInner>;
+   return (
+      <RootLayoutInner key={pathName}>
+         {children}
+         <Footer />
+      </RootLayoutInner>
+   );
 };
 
 export default RootLayout;

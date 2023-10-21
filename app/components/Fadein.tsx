@@ -2,7 +2,7 @@
 import React, { HTMLProps, createContext, useContext } from 'react';
 import { MotionProps, motion, useReducedMotion } from 'framer-motion';
 
-type FadeInProps = HTMLProps<HTMLDivElement>  & MotionProps ;
+type FadeInProps = HTMLProps<HTMLDivElement> & MotionProps;
 
 type FadeInStaggerProps = {
    faster?: boolean;
@@ -41,8 +41,7 @@ export const FadeInStagger: React.FC<FadeInStaggerProps> = ({
          <motion.div
             initial='hidden'
             viewport={viewport}
-            whileInView="visible"
-         
+            whileInView='visible'
             transition={{ staggerChildren: faster ? 0.12 : 0.2 }}
             {...props}
          >
