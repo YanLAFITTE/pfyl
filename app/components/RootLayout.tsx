@@ -34,8 +34,8 @@ const Header = ({
                <h2
                   className={clsx(
                      invert
-                        ? 'cursor-pointer text-lg sm:text-xl duration-300 text-white'
-                        : 'cursor-pointer text-lg sm:text-xl duration-300 text-black'
+                        ? 'cursor-pointer text-lg sm:text-xl duration-300 text-white mt-1'
+                        : 'cursor-pointer text-lg sm:text-xl duration-300 text-black mt-1'
                   )}
                >
                   Yan Lafitte
@@ -54,8 +54,8 @@ const Header = ({
                >
                   <Icon
                      className={clsx(
-                        'h-6 w-6 ',
-                        invert ? 'text-black bg-white' : 'bg-black text-white'
+                        'h-6 w-6 rounded-full',
+                        invert ? 'text-white ' : ' text-black '
                      )}
                   />
                </button>
@@ -82,7 +82,7 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({ children }) => {
       >
          <header>
             <div
-               className='absolute left-0 right-0 top-0 z-40 pt-14 '
+               className='absolute left-0 right-0 top-0 z-40 pt-6 lg:pt-14 '
                aria-hidden={expanded ? 'true' : undefined}
                data-inert={expanded ? '' : undefined}
             >
@@ -99,7 +99,7 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({ children }) => {
                   }}
                />
                <Container>
-                  <div className='h-[2px] bg-black w-full mt-16' />
+                  <div className='h-px bg-black w-full mt-4 lg:mt-14 lg:hidden' />
                </Container>
             </div>
          </header>
@@ -111,8 +111,8 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({ children }) => {
             aria-hidden={expanded ? undefined : 'true'}
             data-inert={expanded ? undefined : ''}
          >
-            <motion.div layout className=' '>
-               <div ref={navRef} className='pb-16 pt-14'>
+            <motion.div layout>
+               <div ref={navRef} className=' pt-6 lg:pt-14'>
                   <Header
                      invert
                      panelId={panelId}
@@ -130,22 +130,22 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({ children }) => {
             </motion.div>
             <Container>
                <FadeInStagger>
-                  <ul className='lg:flex flex-col  '>
-                     <li className='border-t border-stone-200 py-6 group  font-bold'>
+                  <ul className='lg:flex flex-col  pt-4 lg:pt-14'>
+                     <li className='border-t-[1px] border-stone-200 py-6 group  font-bold'>
                         <FadeIn>
                            <div className='text-large group-hover:tracking-[30px] lg:group-hover:tracking-[50px]  duration-300 ease-in-out uppercase  '>
                               Work
                            </div>
                         </FadeIn>
                      </li>
-                     <li className='border-t border-stone-200 py-6 group  font-bold'>
+                     <li className='border-t-[1px]  border-stone-200 py-6 group  font-bold'>
                         <FadeIn>
                            <div className='text-large  group-hover:tracking-[30px] lg:group-hover:tracking-[50px]  duration-300 ease-in-out uppercase  '>
                               About
                            </div>
                         </FadeIn>
                      </li>
-                     <li className='border-t border-stone-200 py-6 group   font-bold'>
+                     <li className='border-t-[1px]  border-stone-200 py-6 group   font-bold'>
                         <FadeIn>
                            <div className='text-large group-hover:tracking-[30px] lg:group-hover:tracking-[50px]   duration-300 ease-in-out uppercase  '>
                               Contact
@@ -160,7 +160,6 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({ children }) => {
             layout
             className='relative flex flex-auto overflow-hidden  pt-40 bg-white text-black'
          >
-            
             <motion.div
                layout
                className='relative isolate flex w-full flex-col pt-9 '
