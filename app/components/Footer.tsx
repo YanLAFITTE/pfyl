@@ -15,16 +15,18 @@ const Footer = () => {
 
    return (
       <footer className=' ' id='contact'>
-         <FadeIn>
-            <Container>
-               <div className='text-4xl lg:text-6xl pt-12 pb-6'>
+         <Container>
+            <FadeIn>
+               <div className='text-4xl lg:text-6xl pt-24 lg:pt-32 pb-12'>
                   Let&apos;s talk
                </div>
-            </Container>
-            <Container>
-               <div className='h-px w-full bg-black'></div>
-            </Container>
-            <Container>
+            </FadeIn>
+         </Container>
+         <Container>
+            <div className='h-px w-full bg-black'></div>
+         </Container>
+         <Container>
+            <FadeIn>
                <div className='flex flex-col items-start  '>
                   <div className='flex flex-col '>
                      <ul className='flex flex-col gap-8 py-10 text-xl lg:text-2xl'>
@@ -57,15 +59,17 @@ const Footer = () => {
                         </Link>
                      </ul>
                   </div>
-                  <div className='flex items-center justify-between w-full py-14  border-t border-black'>
-                     <p>Built by Yan Lafitte.</p>
-                     <p>
-                        &copy;<span id='date'></span>
-                     </p>
-                  </div>
                </div>
-            </Container>
-         </FadeIn>
+            </FadeIn>
+         </Container>
+         <Container>
+            <div className='flex items-center justify-between  py-14  w-full border-t border-black'>
+               <p>Built by Yan Lafitte.</p>
+               <p>
+                  &copy;<span id='date'></span>
+               </p>
+            </div>
+         </Container>
       </footer>
    );
 };

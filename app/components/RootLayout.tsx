@@ -1,6 +1,6 @@
 'use client';
 import { useReducedMotion, MotionConfig, motion } from 'framer-motion';
-import React, { ReactNode, useEffect, useId, useRef, useState } from 'react';
+import React, { ReactNode, useId, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { HiMenuAlt4 } from 'react-icons/hi';
@@ -8,14 +8,13 @@ import { IoMdClose } from 'react-icons/io';
 import Container from './Container';
 import Header from './Header';
 import Footer from './Footer';
-import { useRouter } from 'next/navigation';
+import { FiArrowRight } from 'react-icons/fi';
 
 interface RootLayoutInnerProps {
    children: ReactNode;
 }
 
 const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({ children }) => {
-   const router = useRouter();
    const panelId = useId();
    const [expanded, setExpanded] = useState(false);
    const openRef = useRef<HTMLButtonElement | null>(null);
@@ -23,21 +22,7 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({ children }) => {
    const navRef = useRef<HTMLDivElement | null>(null);
    const shouldReduceMotion = useReducedMotion();
 
-   useEffect(() => {
-      function onClick(event: MouseEvent) {
-         const target = event.target as HTMLElement | null;
-
-         if (target && target.closest('a')?.href === window.location.href) {
-            setExpanded(false);
-         }
-      }
-
-      window.addEventListener('click', onClick);
-
-      return () => {
-         window.removeEventListener('click', onClick);
-      };
-   }, []);
+   //
 
    return (
       <MotionConfig
@@ -96,35 +81,26 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({ children }) => {
 
             <Container>
                <ul className='lg:flex flex-col   pt-4 lg:pt-14'>
-                  <Link
-                     href={'/'}
-                     onClick={() => {
-                        setExpanded(false);
-                     }}
-                  >
-                     <li className='border-t-[1px] border-stone-200 py-6 group flex  font-bold'>
-                        <div className='text-large group-hover:pl-10  duration-300 ease-in-out uppercase  '>
-                           Home
+                  <Link href={'/#work'} scroll>
+                     <li className='border-t-[1px] border-white py-6 group flex items-center  font-bold'>
+                        <FiArrowRight className='  group-hover:opacity-100 opacity-0 -translate-x-10 group-hover:translate-x-0 duration-300 ease-in-out text-xl' />
+                        <div className='text-large group-hover:ml-4 -ml-4  duration-300 ease-in-out uppercase  '>
+                           Work
                         </div>
                      </li>
                   </Link>
                   <Link href='/about' onClick={() => setExpanded(false)}>
-                     <li className='border-t-[1px]  border-stone-200 py-6 group flex font-bold'>
-                        <div className='text-large  group-hover:pl-10  duration-300 ease-in-out uppercase  '>
+                     <li className='border-t-[1px]  border-white py-6 group flex items-center  font-bold'>
+                        <FiArrowRight className=' group-hover:opacity-100 opacity-0 -translate-x-10 group-hover:translate-x-0 duration-300 ease-in-out text-xl' />
+                        <div className='text-large  group-hover:ml-4 -ml-4   duration-300 ease-in-out uppercase  '>
                            About
                         </div>
                      </li>
                   </Link>
-                  <Link
-                     href={'/#contact'}
-                     scroll
-                     onClick={() => {
-                        setExpanded(false);
-                     }}
-                     className='w-full'
-                  >
-                     <li className='border-t-[1px]  border-stone-200 py-6 group flex  font-bold'>
-                        <div className='text-large group-hover:pl-10   duration-300 ease-in-out uppercase  '>
+                  <Link href={'/#contact'} scroll>
+                     <li className='border-t-[1px]  border-white py-6 group flex items-center font-bold'>
+                        <FiArrowRight className='  group-hover:opacity-100 opacity-0 -translate-x-10 group-hover:translate-x-0 duration-300 ease-in-out text-xl' />
+                        <div className='text-large group-hover:ml-4 -ml-4    duration-300 ease-in-out uppercase  '>
                            Contact
                         </div>
                      </li>
@@ -135,9 +111,6 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({ children }) => {
          <motion.div
             layout
             className='relative flex flex-auto overflow-hidden  pt-40 bg-white text-black '
-            onClick={() => {
-               setExpanded(false);
-            }}
          >
             <motion.div
                layout

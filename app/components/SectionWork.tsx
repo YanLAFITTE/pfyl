@@ -7,11 +7,8 @@ import clsx from 'clsx';
 import Container from '../components/Container';
 import { AiOutlineArrowDown } from 'react-icons/ai';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 
 const SectionWork = () => {
-   const router = useRouter();
-
    const [projectOpen, setProjectOpen] = useState(false);
 
    const handleClick = () => {
@@ -19,14 +16,21 @@ const SectionWork = () => {
    };
 
    return (
-      <div className='  bg-black text-white' id='work'>
+      <div className='  bg-black text-white'>
          <Container>
-            <div className='flex w-full justify-between items-center pb-14'>
+            <div
+               className='flex w-full justify-between items-center pb-14'
+               id='work'
+            >
                <div className='pt-10'>
                   <h3 className='text-2xl lg:text-4xl mb-2'>Selected works</h3>
                   <p>2023</p>
                </div>
-               <Link href={'/#work'} scroll className='text-2xl lg:text-4xl'>
+               <Link
+                  href={'/#work'}
+                  scroll
+                  className='text-2xl lg:text-4xl mt-1'
+               >
                   <AiOutlineArrowDown />
                </Link>
             </div>
@@ -39,22 +43,26 @@ const SectionWork = () => {
                      >
                         Project1
                      </li>
-                     <div
-                        className={clsx(
-                           projectOpen
-                              ? 'block w-[50%] mt-10 p-5 bg-white '
-                              : 'hidden'
-                        )}
-                     >
-                        <Image src={agence} alt='' className=' grayscale-100' />
-                     </div>
                   </FadeIn>
+
+                  {/* <div
+                     className={clsx(
+                        projectOpen
+                           ? 'block w-[50%] mt-10 p-5 bg-white '
+                           : 'hidden'
+                     )}
+                  >
+                     <Image src={agence} alt='' className=' grayscale-100' />
+                  </div> */}
+
                   <FadeIn>
                      <li className='pt-10 border-t border-white '>Project2</li>
                   </FadeIn>
+
                   <FadeIn>
                      <li className='pt-10 border-t border-white'>Project3</li>
                   </FadeIn>
+
                   <FadeIn>
                      <li className='py-10 border-t border-white'>Project4</li>
                   </FadeIn>

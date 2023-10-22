@@ -5,8 +5,8 @@ import Link from 'next/link';
 
 const AboutPage = () => {
    return (
-      <FadeIn>
-         <Container>
+      <Container>
+         <FadeIn>
             <div className='flex flex-col gap-4 mb-12'>
                <p>
                   Hi, my name is Yan. With 2 years of hands-on experience in web
@@ -28,8 +28,8 @@ const AboutPage = () => {
                   <span>Download my resume</span>
                </Link>
             </div>
-         </Container>
-      </FadeIn>
+         </FadeIn>
+      </Container>
    );
 };
 
