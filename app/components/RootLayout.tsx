@@ -103,32 +103,32 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({ children }) => {
                      }}
                   >
                      <li className='border-t-[1px] border-stone-200 py-6 group flex  font-bold'>
-                        <div className='text-large group-hover:tracking-[30px] lg:group-hover:tracking-[50px]  duration-300 ease-in-out uppercase  '>
+                        <div className='text-large group-hover:pl-10  duration-300 ease-in-out uppercase  '>
                            Home
                         </div>
                      </li>
                   </Link>
                   <Link href='/about' onClick={() => setExpanded(false)}>
                      <li className='border-t-[1px]  border-stone-200 py-6 group flex font-bold'>
-                        <div className='text-large  group-hover:tracking-[30px] lg:group-hover:tracking-[50px]  duration-300 ease-in-out uppercase  '>
+                        <div className='text-large  group-hover:pl-10  duration-300 ease-in-out uppercase  '>
                            About
                         </div>
                      </li>
                   </Link>
-                  <button
-                     type='button'
+                  <Link
+                     href={'/#contact'}
+                     scroll
                      onClick={() => {
                         setExpanded(false);
-                        router.push('/#contact', { scroll: true });
                      }}
                      className='w-full'
                   >
                      <li className='border-t-[1px]  border-stone-200 py-6 group flex  font-bold'>
-                        <div className='text-large group-hover:tracking-[30px] lg:group-hover:tracking-[50px]   duration-300 ease-in-out uppercase  '>
+                        <div className='text-large group-hover:pl-10   duration-300 ease-in-out uppercase  '>
                            Contact
                         </div>
                      </li>
-                  </button>
+                  </Link>
                </ul>
             </Container>
          </motion.div>

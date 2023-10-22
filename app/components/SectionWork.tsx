@@ -19,69 +19,49 @@ const SectionWork = () => {
    };
 
    return (
-      <FadeIn>
-         <div className='  bg-black text-white' id='work'>
-            <Container>
-               <div className='flex w-full justify-between items-center pb-14'>
-                  <div className='pt-10'>
-                     <h3 className='text-2xl lg:text-4xl mb-2'>
-                        Selected works
-                     </h3>
-                     <p>2023</p>
-                  </div>
-                  <button
-                     type='button'
-                     onClick={() => {
-                        router.push('/#work');
-                     }}
-                     className='text-2xl lg:text-4xl'
-                  >
-                     <AiOutlineArrowDown />
-                  </button>
+      <div className='  bg-black text-white' id='work'>
+         <Container>
+            <div className='flex w-full justify-between items-center pb-14'>
+               <div className='pt-10'>
+                  <h3 className='text-2xl lg:text-4xl mb-2'>Selected works</h3>
+                  <p>2023</p>
                </div>
-               <FadeInStagger>
-                  <ul className='flex flex-col gap-10 '>
-                     <FadeIn>
-                        <li
-                           className=' pt-10 border-t border-white '
-                           onClick={handleClick}
-                        >
-                           Project1
-                        </li>
-                        <div
-                           className={clsx(
-                              projectOpen
-                                 ? 'block w-[50%] mt-10 p-5 bg-white '
-                                 : 'hidden'
-                           )}
-                        >
-                           <Image
-                              src={agence}
-                              alt=''
-                              className=' grayscale-100'
-                           />
-                        </div>
-                     </FadeIn>
-                     <FadeIn>
-                        <li className='pt-10 border-t border-white '>
-                           Project2
-                        </li>
-                     </FadeIn>
-                     <FadeIn>
-                        <li className='pt-10 border-t border-white'>
-                           Project3
-                        </li>
-                     </FadeIn>
-                     <FadeIn>
-                        <li className='py-10 border-t border-white'>
-                           Project4
-                        </li>
-                     </FadeIn>
-                  </ul>
-               </FadeInStagger>
-            </Container>
-         </div>
-      </FadeIn>
+               <Link href={'/#work'} scroll className='text-2xl lg:text-4xl'>
+                  <AiOutlineArrowDown />
+               </Link>
+            </div>
+            <FadeInStagger>
+               <ul className='flex flex-col gap-10 '>
+                  <FadeIn>
+                     <li
+                        className=' pt-10 border-t border-white '
+                        onClick={handleClick}
+                     >
+                        Project1
+                     </li>
+                     <div
+                        className={clsx(
+                           projectOpen
+                              ? 'block w-[50%] mt-10 p-5 bg-white '
+                              : 'hidden'
+                        )}
+                     >
+                        <Image src={agence} alt='' className=' grayscale-100' />
+                     </div>
+                  </FadeIn>
+                  <FadeIn>
+                     <li className='pt-10 border-t border-white '>Project2</li>
+                  </FadeIn>
+                  <FadeIn>
+                     <li className='pt-10 border-t border-white'>Project3</li>
+                  </FadeIn>
+                  <FadeIn>
+                     <li className='py-10 border-t border-white'>Project4</li>
+                  </FadeIn>
+               </ul>
+            </FadeInStagger>
+         </Container>
+      </div>
    );
 };
 
