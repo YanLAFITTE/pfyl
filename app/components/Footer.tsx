@@ -16,8 +16,8 @@ const Footer = () => {
    return (
       <footer className=' ' id='contact'>
          <Container>
+            <div className='h-px bg-black w-full my-4 lg:my-14 ' />
             <FadeIn>
-               <div className='h-px bg-black w-full my-4 lg:my-14 ' />
                <div className='flex flex-col items-start pt-10  gap-10'>
                   <div className='flex flex-col gap-8'>
                      <div className='text-4xl lg:text-6xl'>Let&apos;s talk</div>
@@ -51,7 +51,7 @@ const Footer = () => {
                         </Link>
                      </ul>
                   </div>
-                  <div className='flex items-center justify-between w-full pb-14 '>
+                  <div className='flex items-center justify-between w-full pb-14  '>
                      <p>Built by Yan Lafitte.</p>
                      <p>
                         &copy;<span id='date'></span>
