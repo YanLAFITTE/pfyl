@@ -15,13 +15,19 @@ const Footer = () => {
 
    return (
       <footer className=' ' id='contact'>
-         <Container>
-            <div className='h-px bg-black w-full my-4 lg:my-14 ' />
-            <FadeIn>
-               <div className='flex flex-col items-start pt-10  gap-10'>
-                  <div className='flex flex-col gap-8'>
-                     <div className='text-4xl lg:text-6xl'>Let&apos;s talk</div>
-                     <ul className='flex flex-col gap-4 text-xl lg:text-2xl'>
+         <FadeIn>
+            <Container>
+               <div className='text-4xl lg:text-6xl pt-12 pb-6'>
+                  Let&apos;s talk
+               </div>
+            </Container>
+            <Container>
+               <div className='h-px w-full bg-black'></div>
+            </Container>
+            <Container>
+               <div className='flex flex-col items-start  '>
+                  <div className='flex flex-col '>
+                     <ul className='flex flex-col gap-8 py-10 text-xl lg:text-2xl'>
                         <Link
                            href='mailto:welcome.yanlafitte@gmail.com'
                            rel='noopener noreferrer'
@@ -51,15 +57,15 @@ const Footer = () => {
                         </Link>
                      </ul>
                   </div>
-                  <div className='flex items-center justify-between w-full pb-14  '>
+                  <div className='flex items-center justify-between w-full py-14  border-t border-black'>
                      <p>Built by Yan Lafitte.</p>
                      <p>
                         &copy;<span id='date'></span>
                      </p>
                   </div>
                </div>
-            </FadeIn>
-         </Container>
+            </Container>
+         </FadeIn>
       </footer>
    );
 };

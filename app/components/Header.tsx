@@ -25,7 +25,11 @@ const Header = ({
    return (
       <Container>
          <div className='flex items-center justify-between'>
-            <Link href={'/'} aria-label='Home'  onClick={() => setExpanded(false)}>
+            <Link
+               href={'/'}
+               aria-label='Home'
+               onClick={() => setExpanded(false)}
+            >
                <h2
                   className={clsx(
                      invert

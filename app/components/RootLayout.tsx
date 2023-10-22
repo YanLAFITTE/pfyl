@@ -8,12 +8,14 @@ import { IoMdClose } from 'react-icons/io';
 import Container from './Container';
 import Header from './Header';
 import Footer from './Footer';
+import { useRouter } from 'next/navigation';
 
 interface RootLayoutInnerProps {
    children: ReactNode;
 }
 
 const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({ children }) => {
+   const router = useRouter();
    const panelId = useId();
    const [expanded, setExpanded] = useState(false);
    const openRef = useRef<HTMLButtonElement | null>(null);
@@ -93,35 +95,49 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({ children }) => {
             </motion.div>
 
             <Container>
-               <ul className='lg:flex flex-col  pt-4 lg:pt-14'>
-                  <Link href='/#work' onClick={() => setExpanded(false)}>
-                     <li className='border-t-[1px] border-stone-200 py-6 group  font-bold'>
+               <ul className='lg:flex flex-col   pt-4 lg:pt-14'>
+                  <Link
+                     href={'/'}
+                     onClick={() => {
+                        setExpanded(false);
+                     }}
+                  >
+                     <li className='border-t-[1px] border-stone-200 py-6 group flex  font-bold'>
                         <div className='text-large group-hover:tracking-[30px] lg:group-hover:tracking-[50px]  duration-300 ease-in-out uppercase  '>
-                           Work
+                           Home
                         </div>
                      </li>
                   </Link>
                   <Link href='/about' onClick={() => setExpanded(false)}>
-                     <li className='border-t-[1px]  border-stone-200 py-6 group  font-bold'>
+                     <li className='border-t-[1px]  border-stone-200 py-6 group flex font-bold'>
                         <div className='text-large  group-hover:tracking-[30px] lg:group-hover:tracking-[50px]  duration-300 ease-in-out uppercase  '>
                            About
                         </div>
                      </li>
                   </Link>
-                  <Link href='/#contact' onClick={() => setExpanded(false)}>
-                     <li className='border-t-[1px]  border-stone-200 py-6 group   font-bold'>
+                  <button
+                     type='button'
+                     onClick={() => {
+                        setExpanded(false);
+                        router.push('/#contact', { scroll: true });
+                     }}
+                     className='w-full'
+                  >
+                     <li className='border-t-[1px]  border-stone-200 py-6 group flex  font-bold'>
                         <div className='text-large group-hover:tracking-[30px] lg:group-hover:tracking-[50px]   duration-300 ease-in-out uppercase  '>
                            Contact
                         </div>
                      </li>
-                  </Link>
+                  </button>
                </ul>
             </Container>
          </motion.div>
          <motion.div
             layout
             className='relative flex flex-auto overflow-hidden  pt-40 bg-white text-black '
-            onClick={() => setExpanded(false)}
+            onClick={() => {
+               setExpanded(false);
+            }}
          >
             <motion.div
                layout
