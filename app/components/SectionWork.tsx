@@ -16,14 +16,14 @@ const SectionWork = () => {
    };
 
    return (
-      <div className='  bg-black text-white'>
+      <div className='  bg-black text-white '>
          <Container>
             <div
                className='flex w-full justify-between items-start pb-16 2xl:pt-24 pt-10'
                id='work'
             >
-               <div className=''>
-                  <h3 className='text-xl sm:text-3xl   font-display font-semibold lg:text-4xl mb-2'>
+               <div className='font-semibold'>
+                  <h3 className='text-3xl font-display sm:text-5xl lg:text-6xl   mb-2'>
                      Selected works
                   </h3>
                   <p>2023</p>
@@ -31,7 +31,7 @@ const SectionWork = () => {
                <Link
                   href={'/#work'}
                   scroll
-                  className='text-2xl lg:text-3xl  p-2 rounded-full'
+                  className='text-2xl  font-display   rounded-full '
                >
                   <AiOutlineArrowDown />
                </Link>

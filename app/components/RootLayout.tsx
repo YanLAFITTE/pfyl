@@ -90,7 +90,7 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({ children }) => {
                   <Link href='/about' onClick={() => setExpanded(false)}>
                      <li className='border-t-[1px]  border-white py-6 group flex items-center '>
                         <FiArrowRight className='text-xl  group-hover:opacity-100 opacity-0 -translate-x-10 group-hover:translate-x-0 duration-300 ease-in-out ' />
-                        <div className='text-xl  group-hover:ml-4 -ml-4   duration-300 ease-in-out uppercase tracking-[5p]  '>
+                        <div className='text-xl  group-hover:mx-4 -mx-4   duration-300 ease-in-out uppercase tracking-[5p]  '>
                            About
                         </div>
                      </li>
@@ -108,13 +108,15 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({ children }) => {
          </motion.div>
          <motion.div
             layout
-            className='relative flex flex-auto overflow-hidden  pt-40 bg-white text-black '
+            className='relative flex flex-auto overflow-hidden   bg-white text-black '
          >
             <motion.div
                layout
-               className='relative isolate flex w-full flex-col pt-9 '
+               className='relative isolate flex w-full flex-col '
             >
-               <main className='w-full flex-auto'>{children}</main>
+               <main className='w-full flex-auto sm:mb-[566px] mb-[546px] lg:mb-[630px] bg-white pt-[12.5rem]'>
+                  {children}
+               </main>
             </motion.div>
          </motion.div>
       </MotionConfig>

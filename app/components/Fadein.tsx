@@ -15,12 +15,23 @@ const viewport = { once: true, margin: '0px 0px -200px' };
 const FadeIn: React.FC<FadeInProps> = (props) => {
    const shouldReduceMotion = useReducedMotion();
    const isInStaggerGroup = useContext(FadeInStaggerContext);
+   const variants = {
+      hidden: {
+         opacity: 0,
+         y: shouldReduceMotion ? 0 : 24,
+      },
+      visible: {
+         opacity: 1,
+         y: 0,
+         transition: {
+            duration: 0.5,
+            ease: 'easeOut',
+         },
+      },
+   };
    return (
       <motion.div
-         variants={{
-            hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 24 },
-            visible: { opacity: 1, y: 0 },
-         }}
+         variants={variants}
          transition={{ duration: 0.5 }}
          {...(isInStaggerGroup
             ? {}
