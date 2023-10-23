@@ -22,8 +22,6 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({ children }) => {
    const navRef = useRef<HTMLDivElement | null>(null);
    const shouldReduceMotion = useReducedMotion();
 
-   //
-
    return (
       <MotionConfig
          transition={shouldReduceMotion ? { duration: 0 } : undefined}
@@ -81,26 +79,26 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({ children }) => {
 
             <Container>
                <ul className='lg:flex flex-col   pt-4 lg:pt-14'>
-                  <Link href={'/#work'} scroll>
-                     <li className='border-t-[1px] border-white py-6 group flex items-center  font-bold'>
-                        <FiArrowRight className='  group-hover:opacity-100 opacity-0 -translate-x-10 group-hover:translate-x-0 duration-300 ease-in-out text-xl' />
-                        <div className='text-large group-hover:ml-4 -ml-4  duration-300 ease-in-out uppercase  '>
-                           Work
+                  <Link href={'/'} onClick={() => setExpanded(false)}>
+                     <li className='border-t-[1px] border-white py-6 group flex items-center '>
+                        <FiArrowRight className='text-xl   group-hover:opacity-100 opacity-0 -translate-x-10 group-hover:translate-x-0 duration-300 ease-in-out ' />
+                        <div className='text-xl group-hover:ml-4 -ml-4  duration-300 ease-in-out uppercase tracking-[5p]  '>
+                           Home
                         </div>
                      </li>
                   </Link>
                   <Link href='/about' onClick={() => setExpanded(false)}>
-                     <li className='border-t-[1px]  border-white py-6 group flex items-center  font-bold'>
-                        <FiArrowRight className=' group-hover:opacity-100 opacity-0 -translate-x-10 group-hover:translate-x-0 duration-300 ease-in-out text-xl' />
-                        <div className='text-large  group-hover:ml-4 -ml-4   duration-300 ease-in-out uppercase  '>
+                     <li className='border-t-[1px]  border-white py-6 group flex items-center '>
+                        <FiArrowRight className='text-xl  group-hover:opacity-100 opacity-0 -translate-x-10 group-hover:translate-x-0 duration-300 ease-in-out ' />
+                        <div className='text-xl  group-hover:ml-4 -ml-4   duration-300 ease-in-out uppercase tracking-[5p]  '>
                            About
                         </div>
                      </li>
                   </Link>
-                  <Link href={'/#contact'} scroll>
-                     <li className='border-t-[1px]  border-white py-6 group flex items-center font-bold'>
-                        <FiArrowRight className='  group-hover:opacity-100 opacity-0 -translate-x-10 group-hover:translate-x-0 duration-300 ease-in-out text-xl' />
-                        <div className='text-large group-hover:ml-4 -ml-4    duration-300 ease-in-out uppercase  '>
+                  <Link href={'/#contact'} onClick={() => setExpanded(false)}>
+                     <li className='border-t-[1px]  border-white py-6 group flex items-center'>
+                        <FiArrowRight className='text-xl   group-hover:opacity-100 opacity-0 -translate-x-10 group-hover:translate-x-0 duration-300 ease-in-out ' />
+                        <div className='text-xl group-hover:ml-4 -ml-4    duration-300 ease-in-out uppercase tracking-[5p]  '>
                            Contact
                         </div>
                      </li>

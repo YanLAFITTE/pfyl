@@ -33,8 +33,8 @@ const Header = ({
                <h2
                   className={clsx(
                      invert
-                        ? 'cursor-pointer text-lg sm:text-xl duration-300 text-white mt-1'
-                        : 'cursor-pointer text-lg sm:text-xl duration-300 text-black mt-1'
+                        ? 'cursor-pointer text-lg sm:text-xl duration-300 text-white mt-1 '
+                        : 'cursor-pointer text-lg sm:text-xl duration-300 text-black mt-1 '
                   )}
                >
                   Yan Lafitte
@@ -48,7 +48,7 @@ const Header = ({
                   onClick={onToggle}
                   aria-expanded={expanded}
                   aria-controls={panelId}
-                  className={clsx('group p-2.5 transition')}
+                  className={clsx('group p-2.5 transition  rounded-full')}
                   aria-label='Toggle navigation'
                >
                   <Icon

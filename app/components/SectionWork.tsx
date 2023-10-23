@@ -19,26 +19,28 @@ const SectionWork = () => {
       <div className='  bg-black text-white'>
          <Container>
             <div
-               className='flex w-full justify-between items-center pb-14'
+               className='flex w-full justify-between items-start pb-16 2xl:pt-24 pt-10'
                id='work'
             >
-               <div className='pt-10'>
-                  <h3 className='text-2xl lg:text-4xl mb-2'>Selected works</h3>
+               <div className=''>
+                  <h3 className='text-xl sm:text-3xl   font-display font-semibold lg:text-4xl mb-2'>
+                     Selected works
+                  </h3>
                   <p>2023</p>
                </div>
                <Link
                   href={'/#work'}
                   scroll
-                  className='text-2xl lg:text-4xl mt-1'
+                  className='text-2xl lg:text-3xl  p-2 rounded-full'
                >
                   <AiOutlineArrowDown />
                </Link>
             </div>
             <FadeInStagger>
-               <ul className='flex flex-col gap-10 '>
+               <ul className='flex flex-col gap-10 2xl:pb-24 sm:pb-10'>
                   <FadeIn>
                      <li
-                        className=' pt-10 border-t border-white '
+                        className=' pt-10  border-t border-white  uppercase text-xl'
                         onClick={handleClick}
                      >
                         Project1
@@ -56,15 +58,21 @@ const SectionWork = () => {
                   </div> */}
 
                   <FadeIn>
-                     <li className='pt-10 border-t border-white '>Project2</li>
+                     <li className='pt-10 border-t border-white  uppercase text-xl'>
+                        Project2
+                     </li>
                   </FadeIn>
 
                   <FadeIn>
-                     <li className='pt-10 border-t border-white'>Project3</li>
+                     <li className='pt-10 border-t border-white uppercase text-xl'>
+                        Project3
+                     </li>
                   </FadeIn>
 
                   <FadeIn>
-                     <li className='py-10 border-t border-white'>Project4</li>
+                     <li className='py-10 border-t border-white uppercase text-xl'>
+                        Project4
+                     </li>
                   </FadeIn>
                </ul>
             </FadeInStagger>
