@@ -33,7 +33,7 @@ const Header = ({
                <h2
                   className={clsx(
                      invert
-                        ? 'cursor-pointer text-lg sm:text-xl duration-300 text-white mt-1 '
+                        ? 'cursor-pointer text-lg sm:text-xl duration-300 text-[#fffbf0] mt-1 '
                         : 'cursor-pointer text-lg sm:text-xl duration-300 text-black mt-1 '
                   )}
                >
@@ -54,7 +54,7 @@ const Header = ({
                   <Icon
                      className={clsx(
                         'h-6 w-6 rounded-full',
-                        invert ? 'text-white ' : ' text-black '
+                        invert ? 'text-[#fffbf0] ' : ' text-black '
                      )}
                   />
                </button>

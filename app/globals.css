@@ -12,3 +12,12 @@ body {
 body::-webkit-scrollbar {
    display: none; /* Safari and Chrome */
 }
+
+.description {
+   background-color: orange;
+   clip-path: inset(100% 0 100%);
+   transition: clip-path 0.4s;
+}
+.project:hover .description {
+   clip-path: inset(0 0 0);
+}

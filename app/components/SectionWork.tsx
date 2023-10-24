@@ -16,7 +16,7 @@ const SectionWork = () => {
    };
 
    return (
-      <div className='  bg-black text-white '>
+      <div className='  bg-black text-[#fffbf0] '>
          <Container>
             <div
                className='flex w-full justify-between items-start pb-16 2xl:pt-24 pt-10'
@@ -37,10 +37,10 @@ const SectionWork = () => {
                </Link>
             </div>
             <FadeInStagger>
-               <ul className='flex flex-col gap-10 2xl:pb-24 sm:pb-10'>
-                  <FadeIn>
+               <ul className='flex flex-col  2xl:pb-24 pb-10 '>
+                  <FadeIn className=''>
                      <li
-                        className=' pt-10  border-t border-white  uppercase text-xl'
+                        className=' py-10  border-t border-[#fffbf0]  uppercase text-xl'
                         onClick={handleClick}
                      >
                         Project1
@@ -50,27 +50,36 @@ const SectionWork = () => {
                   {/* <div
                      className={clsx(
                         projectOpen
-                           ? 'block w-[50%] mt-10 p-5 bg-white '
-                           : 'hidden'
-                     )}
-                  >
-                     <Image src={agence} alt='' className=' grayscale-100' />
-                  </div> */}
+                        ? 'block w-[50%] mt-10 p-5 bg-white '
+                        : 'hidden'
+                        )}
+                        >
+                        <Image src={agence} alt='' className=' grayscale-100' />
+                     </div> */}
 
-                  <FadeIn>
-                     <li className='pt-10 border-t border-white  uppercase text-xl'>
+                  <FadeIn className=''>
+                     <li
+                        className=' py-10  border-t border-[#fffbf0]  uppercase text-xl'
+                        onClick={handleClick}
+                     >
                         Project2
                      </li>
                   </FadeIn>
 
-                  <FadeIn>
-                     <li className='pt-10 border-t border-white uppercase text-xl'>
+                  <FadeIn className=''>
+                     <li
+                        className=' py-10  border-t border-[#fffbf0]  uppercase text-xl'
+                        onClick={handleClick}
+                     >
                         Project3
                      </li>
                   </FadeIn>
 
-                  <FadeIn>
-                     <li className='py-10 border-t border-white uppercase text-xl'>
+                  <FadeIn className=''>
+                     <li
+                        className=' py-10  border-t border-[#fffbf0]  uppercase text-xl'
+                        onClick={handleClick}
+                     >
                         Project4
                      </li>
                   </FadeIn>
