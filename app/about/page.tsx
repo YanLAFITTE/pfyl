@@ -44,7 +44,7 @@ const AboutPage = () => {
          body.push(
             <p
                key={word + '_' + i}
-               className='text-3xl lg:text-5xl font-display leading-[2.5rem]   lg:leading-[3.5rem] lg:mr-[1vw] mr-[1.5vw] '
+               className='text-3xl font-display sm:text-5xl lg:text-6xl leading-[2.2rem] sm:leading-[3.2rem]   lg:leading-[3.8rem] lg:mr-[1vw] mr-[1.5vw] '
             >
                {letters}
             </p>
@@ -80,7 +80,7 @@ const AboutPage = () => {
                   <div ref={container} className=''>
                      <div
                         ref={body}
-                        className='body flex flex-wrap lg:max-w-xl [text-wrap:balance]'
+                        className=' flex flex-wrap lg:max-w-3xl [text-wrap:balance]'
                      >
                         {splitWords(phrase)}
                      </div>
