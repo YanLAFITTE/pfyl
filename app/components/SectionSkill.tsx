@@ -16,7 +16,7 @@ const SectionSkill = () => {
    };
 
    return (
-      <div className='  bg-black text-white '>
+      <div className='  bg-black text-[#fffbf0] '>
          <Container>
             <div
                className='flex flex-col gap-16 sm:flex-row sm:gap-0 w-full justify-start items-start pb-16 2xl:pt-24 pt-10'

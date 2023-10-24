@@ -9,7 +9,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
 
 const phrase =
-   'Hello - My name is Yan. With 2 years of hands-on experience in web development, I am well-versed in a wide range of programming languages,including HTML5, CSS3, and JavaScript. My expertise extends to popular frameworks like React and Next.js, as well as proficiency in back-end development with technologies like Node.js and Express. I am not only a technical wizard but also a collaborative team player, ready to tackle complex challenges and deliver innovative solutions. My commitment to continuous learning ensures me to stay at the forefront of industry trends, making me an invaluable asset to any web development project.';
+   'Hello - My name is Yan. With 2 years of hands-on experience in web development, I am well-versed in a wide range of programming languages, including HTML5, CSS3, and JavaScript. My expertise extends to popular frameworks like React and Next.js, as well as proficiency in back-end development with technologies like Node.js and Express. I am not only a technical wizard but also a collaborative team player, ready to tackle complex challenges and deliver innovative solutions. My commitment to continuous learning ensures me to stay at the forefront of industry trends, making me an invaluable asset to any web development project.';
 
 const AboutPage = () => {
    const refs = useRef<HTMLElement[]>([]);
@@ -44,7 +44,7 @@ const AboutPage = () => {
          body.push(
             <p
                key={word + '_' + i}
-               className='text-3xl font-display sm:text-5xl lg:text-6xl leading-[2.2rem] sm:leading-[3.2rem]   lg:leading-[3.8rem] lg:mr-[1vw] mr-[1.5vw] '
+               className='text-3xl font-display sm:text-5xl lg:text-6xl [text-wrap:balance] lg:max-w-4xl leading-[2.5rem] sm:leading-[3.5rem] lg:leading-[4rem] mr-[1vw] '
             >
                {letters}
             </p>
