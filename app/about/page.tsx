@@ -9,7 +9,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
 
 const phrase =
-   'Hello - My name is Yan. With 2 years of hands-on experience in web development, I am well-versed in a wide range of programming languages, including HTML5, CSS3, and JavaScript. My expertise extends to popular frameworks like React and Next.js, as well as proficiency in back-end development with technologies like Node.js and Express. I am not only a technical wizard but also a collaborative team player, ready to tackle complex challenges and deliver innovative solutions. My commitment to continuous learning ensures me to stay at the forefront of industry trends, making me an invaluable asset to any web development project.';
+   `Hello - I'm Yan, with 2 years of hands-on experience in web development, I am well-versed in a wide range of programming languages, including HTML5, CSS3, and JavaScript. My expertise extends to popular frameworks like React and Next.js, as well as proficiency in back-end development with technologies like Node.js and Express. I am not only a technical wizard but also a collaborative team player, ready to tackle complex challenges and deliver innovative solutions. My commitment to continuous learning ensures me to stay at the forefront of industry trends, making me an invaluable asset to any web development project.`;
 
 const AboutPage = () => {
    const refs = useRef<HTMLElement[]>([]);
