@@ -11,7 +11,8 @@ export default function Home() {
             <div className='mb-12 2xl:mb-24 '>
                <FadeIn>
                   <h1 className=' text-3xl font-display sm:text-5xl lg:text-6xl [text-wrap:balance] lg:max-w-4xl leading-[2.5rem] sm:leading-[3.5rem] lg:leading-[4rem]'>
-                     Hello - I&apos;m Yan, a{' '}
+                     Hello - I&apos;m Yan,
+                     <br /> a{' '}
                      <strong className='font-semibold '>
                         front-end developer
                      </strong>
