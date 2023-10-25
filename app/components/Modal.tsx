@@ -100,7 +100,7 @@ const Modal = ({ modal, projects }: ModalProps) => {
       };
 
       window.addEventListener('mousemove', handleMouseMove);
-      window.addEventListener('touchmove', handleTouchMove);
+      window.addEventListener('touchstart', handleTouchMove);
 
       return () => {
          // Remove event listeners when the component unmounts
@@ -125,6 +125,9 @@ const Modal = ({ modal, projects }: ModalProps) => {
                      <div
                         className='modal flex flex-col '
                         key={`modal_${index}`}
+                        onTouchStart={(e) => {
+                           e.preventDefault(); // Prevent the default touch behavior
+                        }}
                      >
                         <Image
                            src={`/${src}`}
