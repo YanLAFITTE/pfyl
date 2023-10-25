@@ -9,6 +9,7 @@ import Container from './Container';
 import Header from './Header';
 import Footer from './Footer';
 import { FiArrowRight } from 'react-icons/fi';
+import clsx from 'clsx';
 
 interface RootLayoutInnerProps {
    children: ReactNode;
@@ -114,7 +115,14 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({ children }) => {
                layout
                className='relative isolate flex w-full flex-col '
             >
-               <main className='w-full flex-auto sm:mb-[566px] mb-[546px] lg:mb-[630px] bg-[#fffbf0] pt-[12.5rem] '>
+               <main
+                  className={clsx(
+                     'w-full flex-auto sm:mb-[566px] mb-[546px] lg:mb-[630px] bg-[#fffbf0] pt-[12.5rem]',
+                     expanded
+                        ? ' duration-150  lg:translate-y-[-11%] translate-y-[-15%]'
+                        : ' duration-300 ease translate-0'
+                  )}
+               >
                   {children}
                </main>
             </motion.div>
