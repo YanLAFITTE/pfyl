@@ -14,6 +14,7 @@ const projects = [
       src: 'agence-web.png',
 
       color: '#000000',
+      link: '',
    },
 
    {
@@ -22,6 +23,7 @@ const projects = [
       src: 'disney.png',
 
       color: '#8C8C8C',
+      link: '',
    },
 
    {
@@ -30,6 +32,7 @@ const projects = [
       src: 'ours.jpg',
 
       color: '#EFE8D3',
+      link: '',
    },
 
    {
@@ -38,6 +41,25 @@ const projects = [
       src: 'wall.jpg',
 
       color: '#706D63',
+      link: 'https://photography-portfolio-dun.vercel.app/',
+   },
+
+   {
+      title: 'Photo App',
+
+      src: 'wall.jpg',
+
+      color: '#706D63',
+      link: 'https://photography-portfolio-dun.vercel.app/',
+   },
+
+   {
+      title: 'Photo App',
+
+      src: 'wall.jpg',
+
+      color: '#706D63',
+      link: 'https://photography-portfolio-dun.vercel.app/',
    },
 ];
 
@@ -59,27 +81,29 @@ const SectionWork = () => {
                <Link
                   href={'/#work'}
                   scroll
-                  className='text-2xl  font-display   rounded-full '
+                  className=' text-3xl font-display sm:text-5xl lg:text-6xl rounded-full '
                >
                   <AiOutlineArrowDown />
                </Link>
             </div>
-            <div className=''>
+            <div className=' '>
                <FadeInStagger>
-                  <ul className='flex flex-col  2xl:pb-24 pb-10 '>
+                  <ul className='flex flex-col  2xl:pb-24 pb-44 '>
                      {projects.map((project, index) => {
                         return (
-                           <Project
-                              key={index}
-                              index={index}
-                              title={project.title}
-                              setModal={setModal}
-                           />
+                           <FadeIn key={index}>
+                              <Project
+                                 index={index}
+                                 title={project.title}
+                                 setModal={setModal}
+                                 link={project.link}
+                              />
+                           </FadeIn>
                         );
                      })}
                   </ul>
+                  <Modal modal={modal} projects={projects} />
                </FadeInStagger>
-               <Modal modal={modal} projects={projects} />
             </div>
          </Container>
       </div>

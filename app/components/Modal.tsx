@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useRef, useEffect } from 'react';
+import Link from 'next/link';
 
 import gsap from 'gsap';
 
@@ -9,6 +10,7 @@ type Project = {
    title: string;
    src: string;
    color: string;
+   link: string;
 };
 
 interface ModalProps {
@@ -51,29 +53,8 @@ const Modal = ({ modal, projects }: ModalProps) => {
          ease: 'power3',
       });
 
-      //Move cursor
+ 
 
-      let xMoveCursor = gsap.quickTo(cursor.current, 'left', {
-         duration: 0.5,
-         ease: 'power3',
-      });
-
-      let yMoveCursor = gsap.quickTo(cursor.current, 'top', {
-         duration: 0.5,
-         ease: 'power3',
-      });
-
-      //Move cursor label
-
-      let xMoveCursorLabel = gsap.quickTo(cursorLabel.current, 'left', {
-         duration: 0.45,
-         ease: 'power3',
-      });
-
-      let yMoveCursorLabel = gsap.quickTo(cursorLabel.current, 'top', {
-         duration: 0.45,
-         ease: 'power3',
-      });
 
       window.addEventListener('mousemove', (e) => {
          const { pageX, pageY } = e;
@@ -82,13 +63,6 @@ const Modal = ({ modal, projects }: ModalProps) => {
 
          yMoveContainer(pageY);
 
-         xMoveCursor(pageX);
-
-         yMoveCursor(pageY);
-
-         xMoveCursorLabel(pageX);
-
-         yMoveCursorLabel(pageY);
       });
    }, []);
 
@@ -99,46 +73,30 @@ const Modal = ({ modal, projects }: ModalProps) => {
             variants={scaleAnimation}
             initial='initial'
             animate={active ? 'enter' : 'closed'}
-            className='modalContainer'
+            className='modalContainer '
          >
-            <div className='modalSlider' 
-            style={{ top: index * -100 + '%' }}
-            >
+            <div className='modalSlider' style={{ top: index * -100 + '%' }}>
                {projects.map((project, index) => {
-                  const { src, color } = project;
+                  const { src } = project;
                   return (
                      <div
-                        className='modal'
-                        // style={{ backgroundColor: color }}
+                        className='modal flex flex-col '
                         key={`modal_${index}`}
                      >
                         <Image
                            src={`/${src}`}
                            width={300}
-                           height={0}
+                           height={300}
                            alt='image'
                         />
+                      
                      </div>
                   );
                })}
             </div>
          </motion.div>
-         {/* <motion.div
-            ref={cursor}
-            className='cursor'
-            variants={scaleAnimation}
-            initial='initial'
-            animate={active ? 'enter' : 'closed'}
-         ></motion.div>
-         <motion.div
-            ref={cursorLabel}
-            className='cursorLabel'
-            variants={scaleAnimation}
-            initial='initial'
-            animate={active ? 'enter' : 'closed'}
-         >
-            View
-         </motion.div> */}
+
+     
       </>
    );
 };
