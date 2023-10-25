@@ -8,9 +8,16 @@ interface ProjectProps {
    link: string;
    index: number;
    setModal: (modalState: { active: boolean; index: number }) => void;
+   onTouchStart: () => void;
 }
 
-export default function index({ index, title, setModal, link }: ProjectProps) {
+export default function index({
+   index,
+   title,
+   setModal,
+   link,
+   onTouchStart,
+}: ProjectProps) {
    return (
       <Link
          href={link}
@@ -26,6 +33,7 @@ export default function index({ index, title, setModal, link }: ProjectProps) {
             onMouseLeave={() => {
                setModal({ active: false, index });
             }}
+            onTouchStart={onTouchStart}
          >
             <div className='flex items-center '>
                <FiArrowRight className='text-2xl   group-hover:opacity-100 opacity-0 -translate-x-10 group-hover:translate-x-0 duration-300 ease-in-out -mt-2' />

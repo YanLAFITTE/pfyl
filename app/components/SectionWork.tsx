@@ -64,7 +64,13 @@ const projects = [
 ];
 
 const SectionWork = () => {
+   const [isModalOpen, setIsModalOpen] = useState(false);
    const [modal, setModal] = useState({ active: false, index: 0 });
+
+   const openModalOnTouch = (index: number) => {
+      setIsModalOpen(true);
+      setModal({ active: true, index });
+   };
    return (
       <div className='  bg-black text-[#fffbf0] '>
          <Container>
@@ -97,6 +103,7 @@ const SectionWork = () => {
                                  title={project.title}
                                  setModal={setModal}
                                  link={project.link}
+                                 onTouchStart={() => openModalOnTouch(index)}
                               />
                            </FadeIn>
                         );

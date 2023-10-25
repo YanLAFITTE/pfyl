@@ -93,19 +93,11 @@ const Modal = ({ modal, projects }: ModalProps) => {
          moveContainer(pageX, pageY);
       };
 
-      const handleTouchMove = (e: TouchEvent) => {
-         const touch = e.touches[0];
-         const { pageX, pageY } = touch;
-         moveContainer(pageX, pageY);
-      };
-
       window.addEventListener('mousemove', handleMouseMove);
-      window.addEventListener('touchstart', handleTouchMove);
 
       return () => {
          // Remove event listeners when the component unmounts
          window.removeEventListener('mousemove', handleMouseMove);
-         window.removeEventListener('touchstart', handleTouchMove);
       };
    }, [modalContainer]);
 
@@ -125,9 +117,6 @@ const Modal = ({ modal, projects }: ModalProps) => {
                      <div
                         className='modal flex flex-col '
                         key={`modal_${index}`}
-                        onTouchStart={(e) => {
-                           e.preventDefault(); // Prevent the default touch behavior
-                        }}
                      >
                         <Image
                            src={`/${src}`}
