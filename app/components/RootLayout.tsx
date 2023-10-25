@@ -119,8 +119,8 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({ children }) => {
                   className={clsx(
                      'w-full flex-auto sm:mb-[566px] mb-[546px] lg:mb-[630px] bg-[#fffbf0] pt-[12.5rem]',
                      expanded
-                        ? ' duration-300 translate-y-[-11rem] '
-                        : ' duration-300 ease translate-0'
+                        ? ' duration-200 pt-[1.5rem] '
+                        : ' duration-300 ease pt-[12.5rem]'
                   )}
                >
                   {children}
