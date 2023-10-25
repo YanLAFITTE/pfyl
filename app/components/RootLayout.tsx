@@ -81,7 +81,7 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({ children }) => {
             <Container>
                <ul className='lg:flex flex-col   pt-4 lg:pt-14'>
                   <Link href={'/'} onClick={() => setExpanded(false)}>
-                     <li className='border-t-[1px] border-[#fffbf0] py-6 group flex items-center '>
+                     <li className='border-t-[1px] border-[#fffbf0] py-8 group flex items-center '>
                         <FiArrowRight className='text-xl   group-hover:opacity-100 opacity-0 -translate-x-10 group-hover:translate-x-0 duration-300 ease-in-out ' />
                         <div className='text-xl group-hover:ml-4 -ml-4  duration-300 ease-in-out uppercase tracking-[5p]  '>
                            Home
@@ -89,7 +89,7 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({ children }) => {
                      </li>
                   </Link>
                   <Link href='/about' onClick={() => setExpanded(false)}>
-                     <li className='border-t-[1px]  border-[#fffbf0] py-6 group flex items-center '>
+                     <li className='border-t-[1px]  border-[#fffbf0] py-8 group flex items-center '>
                         <FiArrowRight className='text-xl  group-hover:opacity-100 opacity-0 -translate-x-10 group-hover:translate-x-0 duration-300 ease-in-out ' />
                         <div className='text-xl  group-hover:mx-4 -mx-4   duration-300 ease-in-out uppercase tracking-[5p]  '>
                            About
@@ -97,7 +97,7 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({ children }) => {
                      </li>
                   </Link>
                   <Link href={'/#contact'} onClick={() => setExpanded(false)}>
-                     <li className='border-t-[1px]  border-[#fffbf0] py-6 group flex items-center'>
+                     <li className='border-t-[1px]  border-[#fffbf0] py-8 group flex items-center'>
                         <FiArrowRight className='text-xl   group-hover:opacity-100 opacity-0 -translate-x-10 group-hover:translate-x-0 duration-300 ease-in-out ' />
                         <div className='text-xl group-hover:ml-4 -ml-4    duration-300 ease-in-out uppercase tracking-[5p]  '>
                            Contact

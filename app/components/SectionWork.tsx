@@ -1,20 +1,48 @@
 'use client';
 import React, { useState } from 'react';
-import Image from 'next/image';
-import agence from '../../public/agence-web.png';
 import FadeIn, { FadeInStagger } from './Fadein';
-import clsx from 'clsx';
 import Container from '../components/Container';
 import { AiOutlineArrowDown } from 'react-icons/ai';
 import Link from 'next/link';
+import Project from './Project';
+import Modal from './Modal';
+
+const projects = [
+   {
+      title: 'Web Agency',
+
+      src: 'agence-web.png',
+
+      color: '#000000',
+   },
+
+   {
+      title: 'Stellar App',
+
+      src: 'disney.png',
+
+      color: '#8C8C8C',
+   },
+
+   {
+      title: 'Hot Takes',
+
+      src: 'ours.jpg',
+
+      color: '#EFE8D3',
+   },
+
+   {
+      title: 'Photo App',
+
+      src: 'wall.jpg',
+
+      color: '#706D63',
+   },
+];
 
 const SectionWork = () => {
-   const [projectOpen, setProjectOpen] = useState(false);
-
-   const handleClick = () => {
-      setProjectOpen(!projectOpen);
-   };
-
+   const [modal, setModal] = useState({ active: false, index: 0 });
    return (
       <div className='  bg-black text-[#fffbf0] '>
          <Container>
@@ -36,55 +64,23 @@ const SectionWork = () => {
                   <AiOutlineArrowDown />
                </Link>
             </div>
-            <FadeInStagger>
-               <ul className='flex flex-col  2xl:pb-24 pb-10 '>
-                  <FadeIn className=''>
-                     <li
-                        className=' py-10  border-t border-[#fffbf0]  uppercase text-xl'
-                        onClick={handleClick}
-                     >
-                        Project1
-                     </li>
-                  </FadeIn>
-
-                  {/* <div
-                     className={clsx(
-                        projectOpen
-                        ? 'block w-[50%] mt-10 p-5 bg-white '
-                        : 'hidden'
-                        )}
-                        >
-                        <Image src={agence} alt='' className=' grayscale-100' />
-                     </div> */}
-
-                  <FadeIn className=''>
-                     <li
-                        className=' py-10  border-t border-[#fffbf0]  uppercase text-xl'
-                        onClick={handleClick}
-                     >
-                        Project2
-                     </li>
-                  </FadeIn>
-
-                  <FadeIn className=''>
-                     <li
-                        className=' py-10  border-t border-[#fffbf0]  uppercase text-xl'
-                        onClick={handleClick}
-                     >
-                        Project3
-                     </li>
-                  </FadeIn>
-
-                  <FadeIn className=''>
-                     <li
-                        className=' py-10  border-t border-[#fffbf0]  uppercase text-xl'
-                        onClick={handleClick}
-                     >
-                        Project4
-                     </li>
-                  </FadeIn>
-               </ul>
-            </FadeInStagger>
+            <div className=''>
+               <FadeInStagger>
+                  <ul className='flex flex-col  2xl:pb-24 pb-10 '>
+                     {projects.map((project, index) => {
+                        return (
+                           <Project
+                              key={index}
+                              index={index}
+                              title={project.title}
+                              setModal={setModal}
+                           />
+                        );
+                     })}
+                  </ul>
+               </FadeInStagger>
+               <Modal modal={modal} projects={projects} />
+            </div>
          </Container>
       </div>
    );
