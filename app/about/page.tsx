@@ -73,7 +73,7 @@ const AboutPage = () => {
       return letters;
    };
    return (
-      <>
+      <div>
          <Container>
             <FadeIn>
                <div className='flex flex-col gap-4 mb-12'>
@@ -99,7 +99,7 @@ const AboutPage = () => {
             </FadeIn>
          </Container>
          <SectionSkill />
-      </>
+      </div>
    );
 };
 
