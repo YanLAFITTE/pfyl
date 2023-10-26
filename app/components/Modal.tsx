@@ -34,41 +34,11 @@ const scaleAnimation = {
 };
 
 const Modal = ({ modal, projects }: ModalProps) => {
+   
    const { active, index } = modal;
    const modalContainer = useRef(null);
 
-   // useEffect(() => {
-   //    //Move Container
-
-   //    let xMoveContainer = gsap.quickTo(modalContainer.current, 'left', {
-   //       duration: 0.8,
-   //       ease: 'power3',
-   //    });
-
-   //    let yMoveContainer = gsap.quickTo(modalContainer.current, 'top', {
-   //       duration: 0.8,
-   //       ease: 'power3',
-   //    });
-
-   //    window.addEventListener('mousemove', (e) => {
-   //       const { pageX, pageY } = e;
-
-   //       xMoveContainer(pageX);
-
-   //       yMoveContainer(pageY);
-
-   //    });
-
-   //    window.addEventListener('touchmove', (e) => {
-   //       const { pageX, pageY } = e;
-
-   //       xMoveContainer(pageX);
-
-   //       yMoveContainer(pageY);
-
-   //    });
-
-   // }, []);
+   
 
    useEffect(() => {
       // Move Container
@@ -92,12 +62,20 @@ const Modal = ({ modal, projects }: ModalProps) => {
          const { pageX, pageY } = e;
          moveContainer(pageX, pageY);
       };
+      const handleTouchMove = (e: TouchEvent) => {
+         const touch = e.touches[0];
+         const { pageX, pageY } = touch;
+         moveContainer(pageX, pageY);
+      };
 
       window.addEventListener('mousemove', handleMouseMove);
+      window.addEventListener('touchmove', handleTouchMove);
+      
 
       return () => {
          // Remove event listeners when the component unmounts
          window.removeEventListener('mousemove', handleMouseMove);
+         window.removeEventListener('touchmove', handleTouchMove);
       };
    }, [modalContainer]);
 
@@ -117,6 +95,9 @@ const Modal = ({ modal, projects }: ModalProps) => {
                      <div
                         className='modal flex flex-col '
                         key={`modal_${index}`}
+                        onTouchStart={(e) => {
+                           e.preventDefault(); 
+                        }}
                      >
                         <Image
                            src={`/${src}`}
