@@ -109,7 +109,7 @@ const SectionWork = () => {
                         );
                      })}
                   </ul>
-                  <Modal modal={modal} projects={projects} />
+                  <Modal modal={modal} projects={projects} setModal={setModal}/>
                </FadeInStagger>
             </div>
          </Container>

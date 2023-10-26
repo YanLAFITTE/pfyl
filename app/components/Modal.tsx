@@ -1,7 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 
 import gsap from 'gsap';
 
@@ -15,6 +15,7 @@ type Project = {
 interface ModalProps {
    modal: { active: boolean; index: number };
    projects: Project[];
+   setModal: (modalState: { active: boolean; index: number }) => void;
 }
 
 const scaleAnimation = {
@@ -33,7 +34,7 @@ const scaleAnimation = {
    },
 };
 
-const Modal = ({ modal, projects }: ModalProps) => {
+const Modal = ({ modal, projects, setModal }: ModalProps) => {
    const { active, index } = modal;
    const modalContainer = useRef(null);
 
@@ -64,16 +65,31 @@ const Modal = ({ modal, projects }: ModalProps) => {
          const { pageX, pageY } = touch;
          moveContainer(pageX, pageY);
       };
+      const handleClick = (e: MouseEvent) => {
+         // Check if the click target is not the modal and not the "work" section
+         if (
+            // modalContainer.current &&
+            // !modalContainer.current.contains(e.target as Node) &&
+            e.target !== document.getElementById('work')
+         ) {
+            // Set the modal state to inactive
+            setModal({ active: false, index });
+         }
+      };
 
       window.addEventListener('mousemove', handleMouseMove);
       window.addEventListener('touchstart', handleTouchMove);
+
+      document.addEventListener('click', handleClick);
 
       return () => {
          // Remove event listeners when the component unmounts
          window.removeEventListener('mousemove', handleMouseMove);
          window.removeEventListener('touchstart', handleTouchMove);
+
+         document.removeEventListener('click', handleClick);
       };
-   }, [modalContainer]);
+   }, [modalContainer, setModal, index]);
 
    return (
       <>
