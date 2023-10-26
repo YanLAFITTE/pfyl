@@ -68,8 +68,10 @@ const Modal = ({ modal, projects, setModal }: ModalProps) => {
       const handleClick = (e: MouseEvent) => {
          // Check if the click target is not the modal and not the "work" section
          if (
-            // modalContainer.current &&
-            // !modalContainer.current.contains(e.target as Node) &&
+            modalContainer.current &&
+            !!(modalContainer.current as HTMLElement).contains(
+               e.target as Node
+            ) &&
             e.target !== document.getElementById('work')
          ) {
             // Set the modal state to inactive
