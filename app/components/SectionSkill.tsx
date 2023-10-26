@@ -27,50 +27,27 @@ const SectionSkill = () => {
                      Tech Skills
                   </h3>
                   <div className='flex gap-20'>
-                     <FadeInStagger>
-                        <ul className='flex flex-col gap-6 text-xl'>
-                           <FadeIn>
-                              <li>HTML</li>
-                           </FadeIn>
-                           <FadeIn>
-                              <li>CSS</li>
-                           </FadeIn>
-                           <FadeIn>
-                              <li>SASS</li>
-                           </FadeIn>
-                           <FadeIn>
-                              <li>Tailwind</li>
-                           </FadeIn>
-                           <FadeIn>
-                              <li>JavaScript</li>
-                           </FadeIn>
-                           <FadeIn>
-                              <li>React</li>
-                           </FadeIn>
-                           <FadeIn>
-                              <li>Next</li>
-                           </FadeIn>
-                        </ul>
-                     </FadeInStagger>
-                     <FadeInStagger>
-                        <ul className='flex flex-col gap-6 text-xl'>
-                           <FadeIn>
-                              <li>CMS</li>
-                           </FadeIn>
-                           <FadeIn>
-                              <li>Express</li>
-                           </FadeIn>
-                           <FadeIn>
-                              <li>MongoDB</li>
-                           </FadeIn>
-                           <FadeIn>
-                              <li>Git</li>
-                           </FadeIn>
-                           <FadeIn>
-                              <li>GitHub</li>
-                           </FadeIn>
-                        </ul>
-                     </FadeInStagger>
+                     <ul className='flex flex-col gap-6 text-xl'>
+                        <FadeIn>
+                           <li>HTML</li>
+                           <li>CSS</li>
+                           <li>SASS</li>
+                           <li>Tailwind</li>
+                           <li>JavaScript</li>
+                           <li>React</li>
+                           <li>Next</li>
+                        </FadeIn>
+                     </ul>
+
+                     <ul className='flex flex-col gap-6 text-xl'>
+                        <FadeIn>
+                           <li>CMS</li>
+                           <li>Express</li>
+                           <li>MongoDB</li>
+                           <li>Git</li>
+                           <li>GitHub</li>
+                        </FadeIn>
+                     </ul>
                   </div>
                </div>
                <div className=''>
@@ -78,28 +55,16 @@ const SectionSkill = () => {
                      Soft Skills
                   </h3>
 
-                  <FadeInStagger>
-                     <ul className='flex flex-col gap-6 text-xl'>
-                        <FadeIn>
-                           <li>Communication</li>
-                        </FadeIn>
-                        <FadeIn>
-                           <li>Empathy</li>
-                        </FadeIn>
-                        <FadeIn>
-                           <li>Patience</li>
-                        </FadeIn>
-                        <FadeIn>
-                           <li>Open-Mindedness</li>
-                        </FadeIn>
-                        <FadeIn>
-                           <li>Adaptability</li>
-                        </FadeIn>
-                        <FadeIn>
-                           <li>Curiosity</li>
-                        </FadeIn>
-                     </ul>
-                  </FadeInStagger>
+                  <ul className='flex flex-col gap-6 text-xl'>
+                     <FadeIn>
+                        <li>Communication</li>
+                        <li>Empathy</li>
+                        <li>Patience</li>
+                        <li>Open-Mindedness</li>
+                        <li>Adaptability</li>
+                        <li>Curiosity</li>
+                     </FadeIn>
+                  </ul>
                </div>
             </div>
          </Container>

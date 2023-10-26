@@ -5,71 +5,80 @@ import Container from '../components/Container';
 import { AiOutlineArrowDown } from 'react-icons/ai';
 import Link from 'next/link';
 import Project from './Project';
-import Modal from './Modal';
 
 const projects = [
    {
       title: 'Web Agency',
 
-      src: 'agence-web.png',
+      src: '/agence-web.png',
 
       color: '#000000',
       link: '',
+      techno: 'React',
    },
 
    {
       title: 'Stellar App',
 
-      src: 'disney.png',
+      src: '/disney.png',
 
       color: '#8C8C8C',
       link: '',
+      techno: 'React',
    },
 
    {
       title: 'Hot Takes',
 
-      src: 'ours.jpg',
+      src: '/ours.jpg',
 
       color: '#EFE8D3',
       link: '',
+      techno: 'React',
    },
 
    {
       title: 'Photo App',
 
-      src: 'wall.jpg',
+      src: '/wall.jpg',
 
       color: '#706D63',
       link: 'https://photography-portfolio-dun.vercel.app/',
+      techno: 'React',
    },
 
    {
       title: 'Photo App',
 
-      src: 'wall.jpg',
+      src: '/wall.jpg',
 
       color: '#706D63',
       link: 'https://photography-portfolio-dun.vercel.app/',
+      techno: 'React',
    },
 
    {
       title: 'Photo App',
 
-      src: 'wall.jpg',
+      src: '/wall.jpg',
 
       color: '#706D63',
       link: 'https://photography-portfolio-dun.vercel.app/',
+      techno: 'React',
    },
 ];
 
 const SectionWork = () => {
-   const [isModalOpen, setIsModalOpen] = useState(false);
-   const [modal, setModal] = useState({ active: false, index: 0 });
-
-   const openModalOnTouch = (index: number) => {
-      setIsModalOpen(true);
-      setModal({ active: true, index });
+   const [openProjects, setOpenProjects] = useState<number[]>([]);
+   const handleProjectClick = (index: number) => {
+      // Toggle the clicked project's index in the openProjects state
+      if (openProjects.includes(index)) {
+         setOpenProjects(
+            openProjects.filter((projectIndex) => projectIndex !== index)
+         );
+      } else {
+         setOpenProjects([index]);
+      }
    };
    return (
       <div className='  bg-black text-[#fffbf0] '>
@@ -93,24 +102,24 @@ const SectionWork = () => {
                </Link>
             </div>
             <div className=' '>
-               <FadeInStagger>
-                  <ul className='flex flex-col  2xl:pb-24 pb-44 '>
-                     {projects.map((project, index) => {
-                        return (
-                           <FadeIn key={index}>
-                              <Project
-                                 index={index}
-                                 title={project.title}
-                                 setModal={setModal}
-                                 link={project.link}
-                                 onTouchStart={() => openModalOnTouch(index)}
-                              />
-                           </FadeIn>
-                        );
-                     })}
-                  </ul>
-                  <Modal modal={modal} projects={projects} setModal={setModal}/>
-               </FadeInStagger>
+               <ul className='flex flex-col  pb-24  '>
+                  {projects.map((project, index) => {
+                     return (
+                        <FadeIn key={index}>
+                           <Project
+                              index={index}
+                              title={project.title}
+                              link={project.link}
+                              techno={project.techno}
+                              src={project.src}
+                              openProjects={openProjects} 
+                              setOpenProjects={setOpenProjects} 
+                              onProjectClick={() => handleProjectClick(index)}
+                           />
+                        </FadeIn>
+                     );
+                  })}
+               </ul>
             </div>
          </Container>
       </div>
