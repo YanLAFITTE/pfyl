@@ -69,13 +69,13 @@ const Modal = ({ modal, projects }: ModalProps) => {
       };
 
       window.addEventListener('mousemove', handleMouseMove);
-      window.addEventListener('touchmove', handleTouchMove);
+      window.addEventListener('touchstart', handleTouchMove);
       
 
       return () => {
          // Remove event listeners when the component unmounts
          window.removeEventListener('mousemove', handleMouseMove);
-         window.removeEventListener('touchmove', handleTouchMove);
+         window.removeEventListener('touchstart', handleTouchMove);
       };
    }, [modalContainer]);
 
