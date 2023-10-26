@@ -82,7 +82,7 @@ const SectionWork = () => {
                   <h3 className='text-3xl font-display sm:text-5xl lg:text-6xl   mb-2'>
                      Selected works
                   </h3>
-                  <p>2023</p>
+                  <p className='text-lg lg:text-2xl sm:text-xl'>2023</p>
                </div>
                <Link
                   href={'/#work'}

@@ -34,11 +34,8 @@ const scaleAnimation = {
 };
 
 const Modal = ({ modal, projects }: ModalProps) => {
-   
    const { active, index } = modal;
    const modalContainer = useRef(null);
-
-   
 
    useEffect(() => {
       // Move Container
@@ -70,7 +67,6 @@ const Modal = ({ modal, projects }: ModalProps) => {
 
       window.addEventListener('mousemove', handleMouseMove);
       window.addEventListener('touchstart', handleTouchMove);
-      
 
       return () => {
          // Remove event listeners when the component unmounts
@@ -96,7 +92,7 @@ const Modal = ({ modal, projects }: ModalProps) => {
                         className='modal flex flex-col '
                         key={`modal_${index}`}
                         onTouchStart={(e) => {
-                           e.preventDefault(); 
+                           e.preventDefault();
                         }}
                      >
                         <Image
