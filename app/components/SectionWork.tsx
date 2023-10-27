@@ -84,12 +84,12 @@ const SectionWork = () => {
                <Link
                   href={'/#work'}
                   scroll
-                  className=' text-3xl font-display sm:text-5xl lg:text-6xl rounded-full p-5 -mt-5 -mr-5'
+                  className='cursor-pointer  items-center p-2.5 rounded-full group bg-[#fffbf0] '
                >
-                  <AiOutlineArrowDown />
+                  <AiOutlineArrowDown className='text-xl lg:text-2xl  group-hover:scale-110 text-black ' />
                </Link>
             </div>
-            <div >
+            <div>
                <ul className='flex flex-col  pb-24  '>
                   {projects.map((project, index) => {
                      return (

@@ -38,7 +38,7 @@ const Footer = ({ footerRef }: FooterProps) => {
                            rel='noopener noreferrer'
                            target='_blank'
                         >
-                           <li className='text-xl font-display sm:text-3xl lg:text-5xl underline hover:opacity-80 duration-300 ease-in-out'>
+                           <li className='text-xl font-display sm:text-3xl lg:text-5xl underline hover:opacity-80 duration-300 ease-in-out '>
                               welcome.yanlafitte@gmail.com
                            </li>
                         </Link>
@@ -71,9 +71,11 @@ const Footer = ({ footerRef }: FooterProps) => {
                      <p>&copy;2023</p>
                   </div>
 
-                  <div className='flex flex-col cursor-pointer  items-center p-5 -mr-5 -mt-2' onClick={scrollUp}>
-                     <AiOutlineArrowUp className='text-3xl lg:text-4xl' />
-                     <div className='text-lg lg:text-2xl sm:text-xl'>top</div>
+                  <div
+                     className='cursor-pointer  items-center p-2.5 rounded-full group bg-black '
+                     onClick={scrollUp}
+                  >
+                     <AiOutlineArrowUp className='text-xl lg:text-2xl group-hover:scale-110 text-[#fffbf0] ' />
                   </div>
                </div>
             </Container>

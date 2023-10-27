@@ -47,7 +47,7 @@ const Header = ({
                   <Link
                      href={'https://github.com/YanLAFITTE'}
                      className={clsx(
-                        ' text-xl lg:text-2xl  rounded-full hover:scale-110',
+                        ' text-2xl lg:text-3xl  rounded-full hover:scale-110',
                         invert ? 'text-[#fffbf0] ' : 'text-black'
                      )}
                      rel='noopener noreferrer'
@@ -58,7 +58,7 @@ const Header = ({
                   <Link
                      href={'https://www.linkedin.com/in/yan-lafitte/'}
                      className={clsx(
-                        ' text-xl lg:text-2xl  rounded-full hover:scale-110 ',
+                        ' text-2xl lg:text-3xl  rounded-full hover:scale-110 ',
                         invert ? 'text-[#fffbf0] ' : 'text-black'
                      )}
                      rel='noopener noreferrer'
@@ -75,14 +75,16 @@ const Header = ({
                   aria-expanded={expanded}
                   aria-controls={panelId}
                   className={clsx(
-                     'group p-2.5 transition  rounded-full ease duration-150  -mr-[10px]'
+                     'group p-2.5 transition rounded-full ease duration-150 bg-black  '
                   )}
                   aria-label='Toggle navigation'
                >
                   <Icon
                      className={clsx(
-                        ' text-lg lg:text-2xl sm:text-xl rounded-full ease duration-150 ',
-                        invert ? 'text-[#fffbf0]' : ' text-black '
+                        ' 2 rounded-full ease duration-150 ',
+                        invert
+                           ? 'text-[#fffbf0]  bg-black group-hover:scale-110'
+                           : ' text-[#fffbf0] group-hover:scale-110'
                      )}
                   />
                </button>
