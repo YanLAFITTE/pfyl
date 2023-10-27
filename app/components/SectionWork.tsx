@@ -8,38 +8,39 @@ import Project from './Project';
 
 const projects = [
    {
-      title: 'Photo App',
+      title: 'Photography app',
       src: '/photography.png',
-      color: '#706D63',
       link: 'https://photography-portfolio-dun.vercel.app/portfolio',
       techno: 'React',
    },
    {
       title: 'Dimitri Iovane',
       src: '/dic.png',
-      color: '#000000',
       link: 'https://dimitri-art.vercel.app/',
+      techno: 'React',
+   },
+   {
+      title: 'Agency Contact page',
+      src: '/agence-web.png',
+      link: '',
       techno: 'React',
    },
    {
       title: 'Kaza',
       src: '/kaza1.png',
-      color: '#EFE8D3',
       link: 'https://kasa-app-yanlafitte.vercel.app/',
       techno: 'React',
    },
    {
       title: 'Stellar App',
       src: '/stellar.png',
-      color: '#8C8C8C',
       link: 'https://stellar-app.vercel.app/',
-      techno: 'React',
+      techno: 'HTML, CSS, JS',
    },
 
    {
       title: 'OhMyFood!',
       src: '/ohmyfood.png',
-      color: '#706D63',
       link: 'https://yanlafitte.github.io/P3_CODE/index.html',
       techno: 'HTML, CSS',
    },
