@@ -1,6 +1,6 @@
 'use client';
 import { useReducedMotion, MotionConfig, motion } from 'framer-motion';
-import React, { ReactNode,  useId, useRef, useState } from 'react';
+import React, { ReactNode, useId, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { HiMenuAlt4 } from 'react-icons/hi';
@@ -132,7 +132,7 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({
                   className={clsx(
                      'w-full flex-auto sm:mb-[546px] mb-[694px] lg:mb-[618px] bg-[#fffbf0] ',
                      expanded
-                        ? ' duration-200 pt-[1.5rem] '
+                        ? ' duration-[450ms] pt-[1.5rem] '
                         : ' duration-300 ease pt-[12.5rem] '
                   )}
                >

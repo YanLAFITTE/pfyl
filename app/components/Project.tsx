@@ -9,8 +9,9 @@ interface ProjectProps {
    title: string;
    link: string;
    index: number;
-   techno: string;
+   year: string;
    src: string;
+   technos: string[];
    openProjects: number[];
    setOpenProjects: React.Dispatch<React.SetStateAction<number[]>>;
    onProjectClick: () => void;
@@ -20,8 +21,9 @@ export default function Project({
    index,
    title,
    link,
-   techno,
+   year,
    src,
+   technos,
    openProjects,
    setOpenProjects,
    onProjectClick,
@@ -77,42 +79,38 @@ export default function Project({
                   {title}
                </h2>
             </div>
-            <div className=' group-hover:scale-125 duration-300 ease text-lg lg:text-2xl'>
-               {techno}
+            <div className=' group-hover:scale-110 duration-300 ease text-lg '>
+               {year}
             </div>
          </div>
          <p>Design & Development</p>
          <div
-            className={clsx(
-               isOpen
-                  ? ' h-full opacity-100 pt-5 flex flex-col  gap-10 lg:gap-O lg:flex-row justify-between lg:items-end'
-                  : ' hidden',
-               ''
-            )}
+            className={clsx(isOpen ? 'relative mt-10' : ' hidden', '')}
          >
-            <div className='flex flex-col lg:flex-row  gap-10 '>
-               <div className='h-full lg:w-[40vw]'>
+            <div className='grid grid-cols-1 lg:grid-cols-2  mb-5'>
+               <div className='h-auto lg:mr-10 mb-5 lg:mb-0'>
                   <Image
                      src={src}
                      alt={title}
                      width={500}
                      height={400}
-                     className='h-[30vh] lg:h-[35vh] lg:min-w-[35vw] object-contain p-px bg-white bg-opacity-30'
+                     className='object-contain p-px bg-white  h-full w-full'
                   />
                </div>
-               <p className='lg:max-w-[25vw]'>
-                  Project made with react , HTML css, etc Lorem, ipsum dolor sit
-                  amet consectetur adipisicing elit. Et, nam id repudiandae
-                  laborum velit sint neque ipsam distinctio blanditiis?
-                  Provident modi odio enim pariatur delectus, aliquam
-                  necessitatibus optio ipsa numquam!
-               </p>
+               <div className='flex flex-col gap-4 lg:gap-8  '>
+                  <p className='text-xl'>Technologies:</p>
+                  <ul className='flex gap-2 flex-col'>
+                     {technos.map((techno, index) => {
+                        return <li key={index}>{techno}</li>;
+                     })}
+                  </ul>
+               </div>
             </div>
             <Link
                href={link}
                rel='noopener noreferrer'
                target='_blank'
-               className='p-5 border border-white h-6 lg:w-40  whitespace-nowrap flex items-center justify-center hover:bg-white hover:text-black '
+               className='absolute bottom-0 right-0 p-3 border max-w-[150px] border-white flex justify-center items-center  whitespace-nowrap hover:bg-white hover:text-black '
             >
                See Website
             </Link>

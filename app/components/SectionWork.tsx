@@ -9,40 +9,52 @@ import Project from './Project';
 const projects = [
    {
       title: 'Photography app',
+      description: "",
       src: '/photography.png',
       link: 'https://photography-portfolio-dun.vercel.app/portfolio',
-      techno: 'React',
+      technos: ['React', 'Next','TypeScript', 'Tailwind', 'unspalsh API'],
+      year: '2023'
    },
    {
       title: 'Dimitri Iovane',
+      description: "",
       src: '/dic.png',
       link: 'https://dimitri-art.vercel.app/',
-      techno: 'React',
+      technos: ['React', 'Next','TypeScript', 'Tailwind', 'Sanity CMS'],
+      year: '2023'
    },
    {
-      title: 'Agency Contact page',
+      title: 'Contact page',
+      description: "",
       src: '/agence-web.png',
       link: '',
-      techno: 'React',
+      technos: ['React', 'Sass'],
+      year: '2023'
    },
    {
       title: 'Kaza',
+      description: "",
       src: '/kaza1.png',
       link: 'https://kasa-app-yanlafitte.vercel.app/',
-      techno: 'React',
+      technos: ['React', 'Sass'],
+      year: '2022'
    },
    {
       title: 'Stellar App',
+      description: "",
       src: '/stellar.png',
       link: 'https://stellar-app.vercel.app/',
-      techno: 'HTML, CSS, JS',
+      technos: ['HTML', 'CSS', 'JS', 'Nasa API'],
+      year: '2023'
    },
 
    {
       title: 'OhMyFood!',
+      description: "",
       src: '/ohmyfood.png',
       link: 'https://yanlafitte.github.io/P3_CODE/index.html',
-      techno: 'HTML, CSS',
+      technos: ['HTML', 'CSS'],
+      year: '2022'
    },
 ];
 
@@ -80,7 +92,7 @@ const SectionWork = () => {
                </Link>
             </div>
             <div>
-               <ul className='flex flex-col  pb-24  '>
+               <ul className='flex flex-col  pb-24 lg:pb-28  '>
                   {projects.map((project, index) => {
                      return (
                         <FadeIn key={index}>
@@ -88,11 +100,12 @@ const SectionWork = () => {
                               index={index}
                               title={project.title}
                               link={project.link}
-                              techno={project.techno}
+                              year={project.year}
                               src={project.src}
                               openProjects={openProjects}
                               setOpenProjects={setOpenProjects}
                               onProjectClick={() => handleProjectClick(index)}
+                              technos={project.technos}
                            />
                         </FadeIn>
                      );

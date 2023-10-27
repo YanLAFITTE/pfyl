@@ -67,7 +67,9 @@ const SectionSkill = () => {
                            <li>Communication</li>
                            <li>Empathy</li>
                            <li>Patience</li>
-                           <li>Open-Mindedness</li>
+                           <li className=' whitespace-nowrap'>
+                              Open-Mindedness
+                           </li>
                            <li>Adaptability</li>
                            <li>Curiosity</li>
                         </ul>
