@@ -16,19 +16,19 @@ const SectionSkill = () => {
    };
 
    return (
-      <div className='  bg-black text-[#fffbf0] '>
+      <div className='  bg-black text-[#fffbf0] ' id='skills'>
          <Container>
             <div
-               className='flex flex-col gap-16 sm:flex-row sm:gap-0 w-full justify-start items-start pb-16 2xl:pt-24 pt-10'
+               className='flex flex-col gap-16 sm:flex-row sm:gap-0 w-full justify-start items-start pb-16 2xl:pt-24 pt-10 relative'
                id='work'
             >
-               <div className=' w-[50%]'>
+               <div className=' w-[50%] '>
                   <h3 className='text-3xl font-display sm:text-5xl lg:text-6xl  font-semibold mb-12'>
                      Tech Skills
                   </h3>
                   <div className='flex gap-20'>
-                     <ul className='flex flex-col gap-6 text-xl'>
-                        <FadeIn>
+                     <FadeIn>
+                        <ul className='flex flex-col gap-6 text-xl'>
                            <li>HTML</li>
                            <li>CSS</li>
                            <li>SASS</li>
@@ -36,35 +36,43 @@ const SectionSkill = () => {
                            <li>JavaScript</li>
                            <li>React</li>
                            <li>Next</li>
-                        </FadeIn>
-                     </ul>
+                        </ul>
+                     </FadeIn>
 
-                     <ul className='flex flex-col gap-6 text-xl'>
-                        <FadeIn>
+                     <FadeIn>
+                        <ul className='flex flex-col gap-6 text-xl'>
                            <li>CMS</li>
                            <li>Express</li>
                            <li>MongoDB</li>
                            <li>Git</li>
                            <li>GitHub</li>
-                        </FadeIn>
-                     </ul>
+                        </ul>
+                     </FadeIn>
                   </div>
                </div>
-               <div className=''>
-                  <h3 className='text-3xl font-display sm:text-5xl lg:text-6xl  font-semibold mb-12'>
-                     Soft Skills
-                  </h3>
-
-                  <ul className='flex flex-col gap-6 text-xl'>
+               <div className='w-[50%]'>
+                  <div className='lg:relative w-full'>
+                     <h3 className='text-3xl font-display sm:text-5xl lg:text-6xl  font-semibold mb-12'>
+                        Soft Skills
+                     </h3>
+                     <Link
+                        href={'/about/#skills'}
+                        scroll
+                        className='absolute top-9 lg:top-0 right-0 cursor-pointer  items-center p-2.5 rounded-full group bg-[#fffbf0] '
+                     >
+                        <AiOutlineArrowDown className='text-xl lg:text-2xl  group-hover:scale-110 text-black ' />
+                     </Link>
                      <FadeIn>
-                        <li>Communication</li>
-                        <li>Empathy</li>
-                        <li>Patience</li>
-                        <li>Open-Mindedness</li>
-                        <li>Adaptability</li>
-                        <li>Curiosity</li>
+                        <ul className='flex flex-col gap-6 text-xl'>
+                           <li>Communication</li>
+                           <li>Empathy</li>
+                           <li>Patience</li>
+                           <li>Open-Mindedness</li>
+                           <li>Adaptability</li>
+                           <li>Curiosity</li>
+                        </ul>
                      </FadeIn>
-                  </ul>
+                  </div>
                </div>
             </div>
          </Container>

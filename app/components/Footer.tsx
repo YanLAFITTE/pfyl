@@ -18,11 +18,10 @@ const Footer = ({ footerRef }: FooterProps) => {
                   <div className='text-3xl font-display sm:text-5xl lg:text-6xl font-semibold whitespace-nowrap'>
                      Let&apos;s talk
                   </div>
-                  <p className='text-xl lg:text-2xl font-display  '>
-                     Do you want to hire me?
-                     <br />
-                     Contact me through my email or message me on my social
-                     handle for quick response.
+                  <p className='text-xl lg:text-2xl lg:w-[50%] font-display  [text-wrap:balance]'>
+                     Interested in hiring me?
+                     <br /> Get in touch via email or drop me a message on my
+                     social profile, and <span className='font-semibold whitespace-nowrap'>let&apos;s connect</span>.
                   </p>
                </div>
             </Container>
@@ -38,7 +37,7 @@ const Footer = ({ footerRef }: FooterProps) => {
                            rel='noopener noreferrer'
                            target='_blank'
                         >
-                           <li className='text-xl font-display sm:text-3xl lg:text-5xl underline hover:opacity-80 duration-300 ease-in-out '>
+                           <li className='text-xl font-display sm:text-3xl lg:text-5xl font-semibold underline hover:opacity-80 duration-300 ease-in-out '>
                               welcome.yanlafitte@gmail.com
                            </li>
                         </Link>
