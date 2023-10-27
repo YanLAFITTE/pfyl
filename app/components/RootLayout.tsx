@@ -28,6 +28,15 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({
    const navRef = useRef<HTMLDivElement | null>(null);
    const shouldReduceMotion = useReducedMotion();
 
+   const handleScrollToFooter = () => {
+      setTimeout(() => {
+         setExpanded(false);
+         footerRef?.current?.scrollIntoView({
+            behavior: 'smooth',
+         });
+      }, 100);
+   };
+
    return (
       <MotionConfig
          transition={shouldReduceMotion ? { duration: 0 } : undefined}
@@ -101,17 +110,7 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({
                         </div>
                      </li>
                   </Link>
-                  <Link
-                     href={'/#contact'}
-                     onClick={(e) => {
-                        e.preventDefault();
-                        setExpanded(false);
-                        // Scroll to the footer
-                        footerRef?.current?.scrollIntoView({
-                           behavior: 'smooth',
-                        });
-                     }}
-                  >
+                  <Link href={'/#contact'} onClick={handleScrollToFooter}>
                      <li className='border-t-[1px]  border-[#fffbf0] py-8 group flex items-center'>
                         <FiArrowRight className='text-xl   group-hover:opacity-100 opacity-0 -translate-x-10 group-hover:translate-x-0 duration-300 ease-in-out ' />
                         <div className='text-xl group-hover:ml-4 -ml-4    duration-300 ease-in-out uppercase  '>
