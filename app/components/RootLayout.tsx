@@ -29,8 +29,8 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({
    const shouldReduceMotion = useReducedMotion();
 
    const handleScrollToFooter = () => {
+      setExpanded(false);
       setTimeout(() => {
-         setExpanded(false);
          footerRef?.current?.scrollIntoView({
             behavior: 'smooth',
          });
