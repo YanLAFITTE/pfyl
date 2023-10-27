@@ -34,7 +34,7 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({
          footerRef?.current?.scrollIntoView({
             behavior: 'smooth',
          });
-      }, 100);
+      }, 150);
    };
 
    return (
