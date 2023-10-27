@@ -81,7 +81,7 @@ const Header = ({
                >
                   <Icon
                      className={clsx(
-                        ' 2 rounded-full ease duration-150 ',
+                        ' text-xl lg:text-2xl rounded-full ease duration-150 ',
                         invert
                            ? 'text-[#fffbf0]  bg-black group-hover:scale-110'
                            : ' text-[#fffbf0] group-hover:scale-110'

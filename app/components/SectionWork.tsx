@@ -75,8 +75,8 @@ const SectionWork = () => {
                className='flex w-full justify-between items-start pb-16 2xl:pt-24 pt-10'
                id='work'
             >
-               <div className='font-semibold'>
-                  <h3 className='text-3xl font-display sm:text-5xl lg:text-6xl   mb-2'>
+               <div className=''>
+                  <h3 className='text-3xl font-display sm:text-5xl lg:text-6xl font-semibold  mb-2'>
                      Selected works
                   </h3>
                   <p className='text-lg lg:text-2xl sm:text-xl'>2023</p>
