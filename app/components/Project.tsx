@@ -37,6 +37,12 @@ export default function Project({
          );
       } else {
          setOpenProjects([index]);
+
+         setTimeout(() => {
+            if (projectRef.current) {
+               projectRef.current.scrollIntoView({ behavior: 'smooth' });
+            }
+         }, 100);
       }
    };
 
