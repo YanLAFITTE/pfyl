@@ -52,10 +52,10 @@ export default function Project({
          }
       };
 
-      document.addEventListener('mousedown', handleOutsideClick);
+      document.addEventListener('click', handleOutsideClick);
 
       return () => {
-         document.removeEventListener('mousedown', handleOutsideClick);
+         document.removeEventListener('click', handleOutsideClick);
       };
    }, [isOpen, projectRef, setOpenProjects]);
 
@@ -82,13 +82,19 @@ export default function Project({
             className={clsx(
                isOpen
                   ? ' duration-300 ease h-full opacity-100 pt-5 flex flex-col  gap-10 lg:gap-O lg:flex-row justify-between lg:items-end'
-                  : '  h-0 opacity-0',
+                  : ' hidden',
                ''
             )}
-         > 
+         >
             <div className='flex flex-col lg:flex-row  gap-5 max-w-lg'>
                <Image src={src} alt='' width={300} height={300} />
-               <p className=''>Project made with react , HTML css, etc Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et, nam id repudiandae laborum velit sint neque ipsam distinctio blanditiis? Provident modi odio enim pariatur delectus, aliquam necessitatibus optio ipsa numquam!</p>
+               <p className=''>
+                  Project made with react , HTML css, etc Lorem, ipsum dolor sit
+                  amet consectetur adipisicing elit. Et, nam id repudiandae
+                  laborum velit sint neque ipsam distinctio blanditiis?
+                  Provident modi odio enim pariatur delectus, aliquam
+                  necessitatibus optio ipsa numquam!
+               </p>
             </div>
             <Link
                href={link}
