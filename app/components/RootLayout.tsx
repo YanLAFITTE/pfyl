@@ -1,6 +1,6 @@
 'use client';
 import { useReducedMotion, MotionConfig, motion } from 'framer-motion';
-import React, { ReactNode, RefObject, useId, useRef, useState } from 'react';
+import React, { ReactNode,  useId, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { HiMenuAlt4 } from 'react-icons/hi';
@@ -10,7 +10,6 @@ import Header from './Header';
 import Footer from './Footer';
 import { FiArrowRight } from 'react-icons/fi';
 import clsx from 'clsx';
-import Home from '../page';
 
 interface RootLayoutInnerProps {
    children: ReactNode;

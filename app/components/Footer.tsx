@@ -7,8 +7,8 @@ interface FooterProps {
 
 const Footer = ({ footerRef }: FooterProps) => {
    return (
-      <div id='contact' ref={footerRef}>
-         <footer className='fixed bottom-0 left-0 w-full text-black -z-[5] '>
+      <div id='contact' ref={footerRef} className=''>
+         <footer className='fixed bottom-0  left-0 w-full text-black -z-[5] '>
             <Container>
                <div className='text-3xl font-display sm:text-5xl lg:text-6xl font-semibold pt-24 lg:pt-32 pb-12'>
                   Let&apos;s talk

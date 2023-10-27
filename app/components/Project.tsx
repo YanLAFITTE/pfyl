@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { FiArrowRight } from 'react-icons/fi';
 import Image from 'next/image';
@@ -53,7 +53,6 @@ export default function Project({
             projectRef.current &&
             !projectRef.current.contains(event.target as Node)
          ) {
-            // If the project is open and a click occurred outside the project component, close it
             setOpenProjects([]);
          }
       };
@@ -66,7 +65,6 @@ export default function Project({
    }, [isOpen, projectRef, setOpenProjects]);
 
    return (
-      // <Link href={link} rel='noopener noreferrer' target='_blank'>
       <li
          ref={projectRef}
          className='py-8 lg:py-12  border-t border-[#fffbf0] cursor-pointer group relative z-20'
@@ -112,6 +110,5 @@ export default function Project({
             </Link>
          </div>
       </li>
-      // </Link>
    );
 }

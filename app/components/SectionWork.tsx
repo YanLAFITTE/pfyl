@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import FadeIn, { FadeInStagger } from './Fadein';
+import FadeIn from './Fadein';
 import Container from '../components/Container';
 import { AiOutlineArrowDown } from 'react-icons/ai';
 import Link from 'next/link';
@@ -9,9 +9,7 @@ import Project from './Project';
 const projects = [
    {
       title: 'Web Agency',
-
       src: '/agence-web.png',
-
       color: '#000000',
       link: '',
       techno: 'React',
@@ -19,9 +17,7 @@ const projects = [
 
    {
       title: 'Stellar App',
-
       src: '/disney.png',
-
       color: '#8C8C8C',
       link: '',
       techno: 'React',
@@ -29,9 +25,7 @@ const projects = [
 
    {
       title: 'Hot Takes',
-
       src: '/ours.jpg',
-
       color: '#EFE8D3',
       link: '',
       techno: 'React',
@@ -39,9 +33,7 @@ const projects = [
 
    {
       title: 'Photo App',
-
       src: '/wall.jpg',
-
       color: '#706D63',
       link: 'https://photography-portfolio-dun.vercel.app/',
       techno: 'React',
@@ -49,9 +41,7 @@ const projects = [
 
    {
       title: 'Photo App',
-
       src: '/wall.jpg',
-
       color: '#706D63',
       link: 'https://photography-portfolio-dun.vercel.app/',
       techno: 'React',
@@ -59,9 +49,7 @@ const projects = [
 
    {
       title: 'Photo App',
-
       src: '/wall.jpg',
-
       color: '#706D63',
       link: 'https://photography-portfolio-dun.vercel.app/',
       techno: 'React',
@@ -101,7 +89,7 @@ const SectionWork = () => {
                   <AiOutlineArrowDown />
                </Link>
             </div>
-            <div className=' '>
+            <div >
                <ul className='flex flex-col  pb-24  '>
                   {projects.map((project, index) => {
                      return (
@@ -112,8 +100,8 @@ const SectionWork = () => {
                               link={project.link}
                               techno={project.techno}
                               src={project.src}
-                              openProjects={openProjects} 
-                              setOpenProjects={setOpenProjects} 
+                              openProjects={openProjects}
+                              setOpenProjects={setOpenProjects}
                               onProjectClick={() => handleProjectClick(index)}
                            />
                         </FadeIn>
