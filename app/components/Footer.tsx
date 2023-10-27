@@ -1,14 +1,14 @@
 import Link from 'next/link';
 import Container from '../components/Container';
-import FadeIn, { FadeInStagger } from './Fadein';
 
-const Footer = () => {
+interface FooterProps {
+   footerRef: React.RefObject<HTMLDivElement>;
+}
+
+const Footer = ({ footerRef }: FooterProps) => {
    return (
-      <div id='contact'>
-         <footer
-            className='fixed bottom-0 left-0 w-full text-black -z-[5] '
-            id='contact'
-         >
+      <div id='contact' ref={footerRef}>
+         <footer className='fixed bottom-0 left-0 w-full text-black -z-[5] '>
             <Container>
                <div className='text-3xl font-display sm:text-5xl lg:text-6xl font-semibold pt-24 lg:pt-32 pb-12'>
                   Let&apos;s talk

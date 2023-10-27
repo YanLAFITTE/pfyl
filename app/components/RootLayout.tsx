@@ -1,6 +1,6 @@
 'use client';
 import { useReducedMotion, MotionConfig, motion } from 'framer-motion';
-import React, { ReactNode, useId, useRef, useState } from 'react';
+import React, { ReactNode, RefObject, useId, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { HiMenuAlt4 } from 'react-icons/hi';
@@ -10,12 +10,17 @@ import Header from './Header';
 import Footer from './Footer';
 import { FiArrowRight } from 'react-icons/fi';
 import clsx from 'clsx';
+import Home from '../page';
 
 interface RootLayoutInnerProps {
    children: ReactNode;
+   footerRef: React.RefObject<HTMLDivElement>;
 }
 
-const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({ children }) => {
+const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({
+   children,
+   footerRef,
+}) => {
    const panelId = useId();
    const [expanded, setExpanded] = useState(false);
    const openRef = useRef<HTMLButtonElement | null>(null);
@@ -96,7 +101,17 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({ children }) => {
                         </div>
                      </li>
                   </Link>
-                  <Link href={'/#contact'} onClick={() => setExpanded(false)}>
+                  <Link
+                     href={'/#contact'}
+                     onClick={(e) => {
+                        e.preventDefault();
+                        setExpanded(false);
+                        // Scroll to the footer
+                        footerRef?.current?.scrollIntoView({
+                           behavior: 'smooth',
+                        });
+                     }}
+                  >
                      <li className='border-t-[1px]  border-[#fffbf0] py-8 group flex items-center'>
                         <FiArrowRight className='text-xl   group-hover:opacity-100 opacity-0 -translate-x-10 group-hover:translate-x-0 duration-300 ease-in-out ' />
                         <div className='text-xl group-hover:ml-4 -ml-4    duration-300 ease-in-out uppercase  '>
@@ -135,12 +150,13 @@ interface RootLayoutProps {
    children: ReactNode;
 }
 
-const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
+const RootLayout = ({ children }: RootLayoutProps) => {
    const pathName = usePathname();
+   const footerRef = useRef(null);
    return (
-      <RootLayoutInner key={pathName}>
+      <RootLayoutInner key={pathName} footerRef={footerRef}>
          {children}
-         <Footer />
+         <Footer footerRef={footerRef} />
       </RootLayoutInner>
    );
 };

@@ -42,7 +42,7 @@ export default function Project({
             if (projectRef.current) {
                projectRef.current.scrollIntoView({ behavior: 'smooth' });
             }
-         }, 100);
+         }, 0);
       }
    };
 
@@ -87,7 +87,7 @@ export default function Project({
          <div
             className={clsx(
                isOpen
-                  ? ' duration-300 ease h-full opacity-100 pt-5 flex flex-col  gap-10 lg:gap-O lg:flex-row justify-between lg:items-end'
+                  ? ' h-full opacity-100 pt-5 flex flex-col  gap-10 lg:gap-O lg:flex-row justify-between lg:items-end'
                   : ' hidden',
                ''
             )}
