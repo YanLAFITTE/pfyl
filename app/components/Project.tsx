@@ -88,7 +88,7 @@ export default function Project({
             </div>
          </div>
          <p>
-            {dev && 'Developpment'} {design && '/ Design'}
+            {dev && 'Development'} {design && '/ Design'}
          </p>
          <div className={clsx(isOpen ? 'relative mt-10' : ' hidden', '')}>
             <div className='grid grid-cols-1 lg:grid-cols-2  mb-5'>
