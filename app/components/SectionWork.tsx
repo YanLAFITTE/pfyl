@@ -9,52 +9,54 @@ import Project from './Project';
 const projects = [
    {
       title: 'Photography app',
-      description: "",
       src: '/photography.png',
       link: 'https://photography-portfolio-dun.vercel.app/portfolio',
-      technos: ['React', 'Next','TypeScript', 'Tailwind', 'unspalsh API'],
-      year: '2023'
+      technos: ['React', 'Next', 'TypeScript', 'Tailwind', 'unspalsh API'],
+      year: '2023',
+      dev: true,
    },
    {
       title: 'Dimitri Iovane',
-      description: "",
       src: '/dic.png',
       link: 'https://dimitri-art.vercel.app/',
-      technos: ['React', 'Next','TypeScript', 'Tailwind', 'Sanity CMS'],
-      year: '2023'
+      technos: ['React', 'Next', 'TypeScript', 'Tailwind', 'Sanity CMS'],
+      year: '2023',
+      dev: true,
+      design: true,
    },
    {
       title: 'Contact page',
-      description: "",
       src: '/agence-web.png',
       link: '',
       technos: ['React', 'Sass'],
-      year: '2023'
+      year: '2023',
+      dev: true,
    },
    {
       title: 'Kaza',
-      description: "",
       src: '/kaza1.png',
       link: 'https://kasa-app-yanlafitte.vercel.app/',
       technos: ['React', 'Sass'],
-      year: '2022'
+      year: '2022',
+      dev: true,
    },
    {
       title: 'Stellar App',
-      description: "",
       src: '/stellar.png',
       link: 'https://stellar-app.vercel.app/',
       technos: ['HTML', 'CSS', 'JS', 'Nasa API'],
-      year: '2023'
+      year: '2023',
+      dev: true,
+      design: true,
    },
 
    {
       title: 'OhMyFood!',
-      description: "",
       src: '/ohmyfood.png',
       link: 'https://yanlafitte.github.io/P3_CODE/index.html',
       technos: ['HTML', 'CSS'],
-      year: '2022'
+      year: '2022',
+      dev: true,
    },
 ];
 
@@ -106,6 +108,8 @@ const SectionWork = () => {
                               setOpenProjects={setOpenProjects}
                               onProjectClick={() => handleProjectClick(index)}
                               technos={project.technos}
+                              dev={project.dev}
+                              design={project.design}
                            />
                         </FadeIn>
                      );
