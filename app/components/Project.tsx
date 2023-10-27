@@ -97,7 +97,7 @@ export default function Project({
                      alt={title}
                      width={500}
                      height={400}
-                     className='h-[30vh] lg:h-[35vh] lg:min-w-[35vw] object-cover'
+                     className='h-[30vh] lg:h-[35vh] lg:min-w-[35vw] object-contain p-px bg-white bg-opacity-30'
                   />
                </div>
                <p className='lg:max-w-[25vw]'>

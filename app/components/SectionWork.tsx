@@ -8,51 +8,40 @@ import Project from './Project';
 
 const projects = [
    {
-      title: 'Web Agency',
-      src: '/agence-web.png',
-      color: '#000000',
-      link: '',
+      title: 'Photo App',
+      src: '/photography.png',
+      color: '#706D63',
+      link: 'https://photography-portfolio-dun.vercel.app/portfolio',
       techno: 'React',
    },
-
+   {
+      title: 'Dimitri Iovane',
+      src: '/dic.png',
+      color: '#000000',
+      link: 'https://dimitri-art.vercel.app/',
+      techno: 'React',
+   },
+   {
+      title: 'Kaza',
+      src: '/kaza1.png',
+      color: '#EFE8D3',
+      link: 'https://kasa-app-yanlafitte.vercel.app/',
+      techno: 'React',
+   },
    {
       title: 'Stellar App',
-      src: '/disney.png',
+      src: '/stellar.png',
       color: '#8C8C8C',
-      link: '',
+      link: 'https://stellar-app.vercel.app/',
       techno: 'React',
    },
 
    {
-      title: 'Hot Takes',
-      src: '/ours.jpg',
-      color: '#EFE8D3',
-      link: '',
-      techno: 'React',
-   },
-
-   {
-      title: 'Photo App',
-      src: '/wall.jpg',
+      title: 'OhMyFood!',
+      src: '/ohmyfood.png',
       color: '#706D63',
-      link: 'https://photography-portfolio-dun.vercel.app/',
-      techno: 'React',
-   },
-
-   {
-      title: 'Photo App',
-      src: '/wall.jpg',
-      color: '#706D63',
-      link: 'https://photography-portfolio-dun.vercel.app/',
-      techno: 'React',
-   },
-
-   {
-      title: 'Photo App',
-      src: '/wall.jpg',
-      color: '#706D63',
-      link: 'https://photography-portfolio-dun.vercel.app/',
-      techno: 'React',
+      link: 'https://yanlafitte.github.io/P3_CODE/index.html',
+      techno: 'HTML, CSS',
    },
 ];
 

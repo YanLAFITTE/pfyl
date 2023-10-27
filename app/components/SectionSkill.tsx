@@ -19,7 +19,7 @@ const SectionSkill = () => {
       <div className='  bg-black text-[#fffbf0] ' id='skills'>
          <Container>
             <div
-               className='flex flex-col gap-16 sm:flex-row sm:gap-0 w-full justify-start items-start pb-16 2xl:pt-24 pt-10 relative'
+               className='flex flex-col gap-16 sm:flex-row sm:gap-0 w-full justify-start items-start pb-16 xl:pb-24 xl:pt-24 pt-10 relative'
                id='work'
             >
                <div className=' w-[50%] '>
