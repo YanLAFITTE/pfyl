@@ -130,7 +130,7 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({
             >
                <main
                   className={clsx(
-                     'w-full flex-auto sm:mb-[566px] mb-[546px] lg:mb-[630px] bg-[#fffbf0] ',
+                     'w-full flex-auto sm:mb-[546px] mb-[694px] lg:mb-[618px] bg-[#fffbf0] ',
                      expanded
                         ? ' duration-200 pt-[1.5rem] '
                         : ' duration-300 ease pt-[12.5rem] '

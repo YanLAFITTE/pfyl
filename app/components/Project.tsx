@@ -90,9 +90,17 @@ export default function Project({
                ''
             )}
          >
-            <div className='flex flex-col lg:flex-row  gap-5 max-w-lg'>
-               <Image src={src} alt='' width={300} height={300} />
-               <p className=''>
+            <div className='flex flex-col lg:flex-row  gap-10 '>
+               <div className='h-full lg:w-[40vw]'>
+                  <Image
+                     src={src}
+                     alt={title}
+                     width={500}
+                     height={400}
+                     className='h-[30vh] lg:h-[35vh] lg:min-w-[35vw] object-cover'
+                  />
+               </div>
+               <p className='lg:max-w-[25vw]'>
                   Project made with react , HTML css, etc Lorem, ipsum dolor sit
                   amet consectetur adipisicing elit. Et, nam id repudiandae
                   laborum velit sint neque ipsam distinctio blanditiis?
@@ -104,7 +112,7 @@ export default function Project({
                href={link}
                rel='noopener noreferrer'
                target='_blank'
-               className='p-5 border border-white h-6 flex items-center justify-center hover:bg-white hover:text-black '
+               className='p-5 border border-white h-6 lg:w-40  whitespace-nowrap flex items-center justify-center hover:bg-white hover:text-black '
             >
                See Website
             </Link>
