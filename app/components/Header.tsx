@@ -75,7 +75,7 @@ const Header = ({
                   aria-expanded={expanded}
                   aria-controls={panelId}
                   className={clsx(
-                     'group p-2.5 transition  rounded-full ease duration-150 '
+                     'group p-2.5 transition  rounded-full ease duration-150  -mr-[10px]'
                   )}
                   aria-label='Toggle navigation'
                >

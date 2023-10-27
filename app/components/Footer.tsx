@@ -1,11 +1,15 @@
 import Link from 'next/link';
 import Container from '../components/Container';
+import { AiOutlineArrowUp } from 'react-icons/ai';
 
 interface FooterProps {
    footerRef: React.RefObject<HTMLDivElement>;
 }
 
 const Footer = ({ footerRef }: FooterProps) => {
+   const scrollUp = () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+   };
    return (
       <div id='contact' ref={footerRef} className=''>
          <footer className='fixed bottom-0  left-0 w-full text-black -z-[5] '>
@@ -17,8 +21,8 @@ const Footer = ({ footerRef }: FooterProps) => {
                   <p className='text-xl lg:text-2xl font-display  '>
                      Do you want to hire me?
                      <br />
-                     Contact me through my email or message me on my social handle
-                     for quick response.
+                     Contact me through my email or message me on my social
+                     handle for quick response.
                   </p>
                </div>
             </Container>
@@ -61,9 +65,16 @@ const Footer = ({ footerRef }: FooterProps) => {
                </div>
             </Container>
             <Container>
-               <div className=' text-lg lg:text-2xl sm:text-xl flex items-center justify-between  py-14 lg:py-16 w-full border-t border-black'>
-                  <p>Built by Yan Lafitte.</p>
-                  <p>&copy;2023</p>
+               <div className='flex items-center justify-between w-full border-t border-black'>
+                  <div className=' text-lg lg:text-2xl sm:text-xl flex items-center gap-2  py-14 lg:py-16 w-full '>
+                     <p>Built by Yan Lafitte.</p>
+                     <p>&copy;2023</p>
+                  </div>
+
+                  <div className='flex flex-col cursor-pointer  items-center p-5 -mr-5 -mt-2' onClick={scrollUp}>
+                     <AiOutlineArrowUp className='text-3xl lg:text-4xl' />
+                     <div className='text-lg lg:text-2xl sm:text-xl'>top</div>
+                  </div>
                </div>
             </Container>
          </footer>

@@ -84,7 +84,7 @@ const SectionWork = () => {
                <Link
                   href={'/#work'}
                   scroll
-                  className=' text-3xl font-display sm:text-5xl lg:text-6xl rounded-full '
+                  className=' text-3xl font-display sm:text-5xl lg:text-6xl rounded-full p-5 -mt-5 -mr-5'
                >
                   <AiOutlineArrowDown />
                </Link>
