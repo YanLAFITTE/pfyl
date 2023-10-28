@@ -94,25 +94,25 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({
             <Container>
                <ul className='lg:flex flex-col   pt-4 lg:pt-14'>
                   <Link href={'/'} onClick={() => setExpanded(false)}>
-                     <li className='border-t-[1px] border-[#fffbf0] py-8 group flex items-center '>
-                        <FiArrowRight className='text-xl   group-hover:opacity-100 opacity-0 -translate-x-10 group-hover:translate-x-0 duration-300 ease-in-out ' />
-                        <div className='text-xl group-hover:ml-4 -ml-4  duration-300 ease-in-out uppercase  '>
+                     <li className='border-t-[1px] border-color_main py-8 group flex items-center '>
+                        <FiArrowRight className='text-3xl  text-color_main group-hover:opacity-100 opacity-0 -translate-x-10 group-hover:translate-x-0 duration-300 ease-in-out ' />
+                        <div className='text-xl font-semibold group-hover:ml-4 -ml-4  duration-300 ease-in-out uppercase  '>
                            Home
                         </div>
                      </li>
                   </Link>
                   <Link href='/about' onClick={() => setExpanded(false)}>
-                     <li className='border-t-[1px]  border-[#fffbf0] py-8 group flex items-center '>
-                        <FiArrowRight className='text-xl  group-hover:opacity-100 opacity-0 -translate-x-10 group-hover:translate-x-0 duration-300 ease-in-out ' />
-                        <div className='text-xl  group-hover:mx-4 -ml-4    duration-300 ease-in-out uppercase   '>
+                     <li className='border-t-[1px]  border-color_main py-8 group flex items-center '>
+                        <FiArrowRight className='text-3xl text-color_main group-hover:opacity-100 opacity-0 -translate-x-10 group-hover:translate-x-0 duration-300 ease-in-out ' />
+                        <div className='text-xl font-semibold   group-hover:mx-4 -ml-4    duration-300 ease-in-out uppercase   '>
                            About
                         </div>
                      </li>
                   </Link>
                   <Link href={'/#contact'} onClick={handleScrollToFooter}>
-                     <li className='border-t-[1px]  border-[#fffbf0] py-8 group flex items-center'>
-                        <FiArrowRight className='text-xl   group-hover:opacity-100 opacity-0 -translate-x-10 group-hover:translate-x-0 duration-300 ease-in-out ' />
-                        <div className='text-xl group-hover:ml-4 -ml-4    duration-300 ease-in-out uppercase  '>
+                     <li className='border-t-[1px]  border-color_main py-8 group flex items-center'>
+                        <FiArrowRight className='text-3xl text-color_main  group-hover:opacity-100 opacity-0 -translate-x-10 group-hover:translate-x-0 duration-300 ease-in-out ' />
+                        <div className='text-xl font-semibold  group-hover:ml-4 -ml-4    duration-300 ease-in-out uppercase  '>
                            Contact
                         </div>
                      </li>
@@ -122,7 +122,7 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({
          </motion.div>
          <motion.div
             layout
-            className='relative flex flex-auto overflow-hidden   bg-[#fffbf0] text-black '
+            className='relative flex flex-auto overflow-hidden   bg-color_main text-color_secondary '
          >
             <motion.div
                layout
@@ -130,7 +130,7 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({
             >
                <main
                   className={clsx(
-                     'w-full flex-auto sm:mb-[546px] mb-[694px] lg:mb-[618px] bg-[#fffbf0] ',
+                     'w-full flex-auto sm:mb-[546px] mb-[694px] lg:mb-[618px] bg-color_main ',
                      expanded
                         ? ' duration-[450ms] pt-[1.5rem] '
                         : ' duration-300 ease pt-[12.5rem] '

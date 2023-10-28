@@ -73,24 +73,24 @@ const SectionWork = () => {
       }
    };
    return (
-      <div className='  bg-black text-[#fffbf0] '>
+      <div className='  bg-color_secondary text-color_main '>
          <Container>
             <div
-               className='flex w-full justify-between items-start pb-16 2xl:pt-24 pt-10'
+               className='flex w-full justify-between items-start pb-16 2xl:pt-24 pt-10 '
                id='work'
             >
                <div className=''>
-                  <h3 className='text-3xl font-display sm:text-5xl lg:text-6xl font-semibold  mb-2'>
+                  <h3 className='  text-3xl font-display sm:text-5xl lg:text-6xl font-semibold  mb-2'>
                      Selected works
                   </h3>
-                  <p className='text-lg lg:text-2xl sm:text-xl'>2023</p>
+                  <p className='text-lg lg:text-2xl sm:text-xl'>2022/2023</p>
                </div>
                <Link
                   href={'/#work'}
                   scroll
-                  className='cursor-pointer  items-center p-2.5 rounded-full group bg-[#fffbf0] '
+                  className='cursor-pointer  items-center p-2.5 rounded-full group bg-color_main '
                >
-                  <AiOutlineArrowDown className='text-xl lg:text-2xl  group-hover:scale-110 text-black ' />
+                  <AiOutlineArrowDown className='text-xl lg:text-2xl  group-hover:scale-110 text-color_secondary ' />
                </Link>
             </div>
             <div>

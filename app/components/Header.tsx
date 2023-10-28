@@ -34,8 +34,8 @@ const Header = ({
                <h2
                   className={clsx(
                      invert
-                        ? 'cursor-pointer text-lg lg:text-2xl sm:text-xl duration-300 text-[#fffbf0] mt-1 '
-                        : 'cursor-pointer text-lg lg:text-2xl sm:text-xl duration-300 text-black mt-1 '
+                        ? 'cursor-pointer text-lg lg:text-2xl sm:text-xl duration-300 text-color_main mt-1 '
+                        : 'cursor-pointer text-lg lg:text-2xl sm:text-xl duration-300 text-color_secondary mt-1 '
                   )}
                >
                   Yan Lafitte
@@ -48,7 +48,7 @@ const Header = ({
                      href={'https://github.com/YanLAFITTE'}
                      className={clsx(
                         ' text-2xl lg:text-3xl  rounded-full hover:scale-110',
-                        invert ? 'text-[#fffbf0] ' : 'text-black'
+                        invert ? 'text-color_main ' : 'text-color_secondary'
                      )}
                      rel='noopener noreferrer'
                      target='_blank'
@@ -59,7 +59,7 @@ const Header = ({
                      href={'https://www.linkedin.com/in/yan-lafitte/'}
                      className={clsx(
                         ' text-2xl lg:text-3xl  rounded-full hover:scale-110 ',
-                        invert ? 'text-[#fffbf0] ' : 'text-black'
+                        invert ? 'text-color_main ' : 'text-color_secondary'
                      )}
                      rel='noopener noreferrer'
                      target='_blank'
@@ -75,7 +75,7 @@ const Header = ({
                   aria-expanded={expanded}
                   aria-controls={panelId}
                   className={clsx(
-                     'group p-2.5 transition rounded-full ease duration-150 bg-black  '
+                     'group p-2.5 transition rounded-full ease duration-150 bg-color_secondary '
                   )}
                   aria-label='Toggle navigation'
                >
@@ -83,8 +83,8 @@ const Header = ({
                      className={clsx(
                         ' text-xl lg:text-2xl rounded-full ease duration-150 ',
                         invert
-                           ? 'text-[#fffbf0]  bg-black group-hover:scale-110'
-                           : ' text-[#fffbf0] group-hover:scale-110'
+                           ? 'text-color_main  bg-color_secondary group-hover:scale-110'
+                           : ' text-color_main group-hover:scale-110'
                      )}
                   />
                </button>

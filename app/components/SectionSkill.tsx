@@ -16,14 +16,14 @@ const SectionSkill = () => {
    };
 
    return (
-      <div className='  bg-black text-[#fffbf0] ' id='skills'>
+      <div className='  bg-color_secondary text-color_main ' id='skills'>
          <Container>
             <div
                className='flex flex-col gap-16 sm:flex-row sm:gap-0 w-full justify-start items-start pb-16 xl:pb-24 xl:pt-24 pt-10 relative'
                id='work'
             >
                <div className=' w-[50%] '>
-                  <h3 className='text-3xl font-display sm:text-5xl lg:text-6xl  font-semibold mb-12'>
+                  <h3 className='text-color_main text-3xl font-display sm:text-5xl lg:text-6xl  font-semibold mb-12'>
                      Tech Skills
                   </h3>
                   <div className='flex gap-20'>
@@ -52,15 +52,15 @@ const SectionSkill = () => {
                </div>
                <div className='w-[50%]'>
                   <div className='lg:relative w-full'>
-                     <h3 className='text-3xl font-display sm:text-5xl lg:text-6xl  font-semibold mb-12'>
+                     <h3 className='text-color_main text-3xl font-display sm:text-5xl lg:text-6xl  font-semibold mb-12'>
                         Soft Skills
                      </h3>
                      <Link
                         href={'/about/#skills'}
                         scroll
-                        className='absolute top-9 lg:top-0 right-0 cursor-pointer  items-center p-2.5 rounded-full group bg-[#fffbf0] '
+                        className='absolute top-9 lg:top-0 right-0 cursor-pointer  items-center p-2.5 rounded-full group bg-color_main '
                      >
-                        <AiOutlineArrowDown className='text-xl lg:text-2xl  group-hover:scale-110 text-black ' />
+                        <AiOutlineArrowDown className='text-xl lg:text-2xl  group-hover:scale-110 text-color_secondary ' />
                      </Link>
                      <FadeIn>
                         <ul className='flex flex-col gap-6 text-xl'>
