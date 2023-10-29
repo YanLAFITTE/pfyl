@@ -93,7 +93,7 @@ export default function Project({
          <div
             className={clsx(
                isOpen
-                  ? 'relative mt-10  opacity-100 duration-300'
+                  ? 'relative mt-10  opacity-100 duration-500'
                   : 'absolute mt-10 opacity-0'
             )}
          >

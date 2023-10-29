@@ -73,7 +73,7 @@ const SectionWork = () => {
    };
 
    return (
-      <div className='  bg-color_secondary text-color_main '>
+      <div className='  bg-color_secondary text-color_main pb-10 lg:pb-0'>
          <Container>
             <div
                className='flex w-full justify-between items-start pb-16 2xl:pt-24 pt-10 '
