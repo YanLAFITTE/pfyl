@@ -33,12 +33,9 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({
          footerRef?.current?.scrollIntoView({
             behavior: 'smooth',
          });
-      }, 100);
+      }, 150);
    };
-
-   const scrollUp = () => {
-      window.scroll({ top: 0, behavior: 'smooth' });
-   };
+   
 
    return (
       <MotionConfig
@@ -64,7 +61,7 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({
                   }}
                />
                <Container>
-                  <div className='h-px bg-black w-full mt-4 lg:mt-14 lg:hidden' />
+                  <div className='h-px bg-color_secondary w-full mt-4 lg:mt-14 lg:hidden' />
                </Container>
             </div>
          </header>
@@ -96,13 +93,7 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({
             </motion.div>
             <Container>
                <ul className='lg:flex flex-col   pt-4 lg:pt-14'>
-                  <Link
-                     href={'/'}
-                     onClick={() => {
-                        setExpanded(false);
-                        scrollUp;
-                     }}
-                  >
+                  <Link href={'/'} onClick={() => setExpanded(false)}>
                      <li className='border-t-[1px] border-color_main py-8 group flex items-center '>
                         <FiArrowRight className='text-3xl  text-color_main group-hover:opacity-100 opacity-0 -translate-x-10 group-hover:translate-x-0 duration-300 ease-in-out ' />
                         <div className='text-xl font-semibold group-hover:ml-4 -ml-4  duration-300 ease-in-out uppercase  '>
@@ -110,13 +101,7 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({
                         </div>
                      </li>
                   </Link>
-                  <Link
-                     href='/about'
-                     onClick={() => {
-                        setExpanded(false);
-                        scrollUp;
-                     }}
-                  >
+                  <Link href='/about' onClick={() => setExpanded(false)}>
                      <li className='border-t-[1px]  border-color_main py-8 group flex items-center '>
                         <FiArrowRight className='text-3xl text-color_main group-hover:opacity-100 opacity-0 -translate-x-10 group-hover:translate-x-0 duration-300 ease-in-out ' />
                         <div className='text-xl font-semibold   group-hover:mx-4 -ml-4    duration-300 ease-in-out uppercase   '>
