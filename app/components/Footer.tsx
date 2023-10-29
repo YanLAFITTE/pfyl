@@ -8,9 +8,7 @@ interface FooterProps {
 
 const Footer = ({ footerRef }: FooterProps) => {
    const scrollUp = () => {
-      setTimeout(() => {
-         document.querySelector('#top')?.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
+      window.scroll({ top: 0, behavior: 'smooth' });
    };
    return (
       <div id='contact' ref={footerRef} className=''>
