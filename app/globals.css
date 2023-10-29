@@ -56,9 +56,4 @@ body::-webkit-scrollbar {
    object-fit: cover;
 }
 
-@media screen and (prefers-reduced-motion: reduce) {
-   html,
-   body {
-      scroll-behavior: auto;
-   }
-}
+
