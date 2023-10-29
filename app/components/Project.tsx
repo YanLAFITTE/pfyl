@@ -90,7 +90,13 @@ export default function Project({
          <p>
             {dev && 'Development'} {design && '/ Design'}
          </p>
-         <div className={clsx(isOpen ? 'relative mt-10' : ' hidden', '')}>
+         <div
+            className={clsx(
+               isOpen
+                  ? 'relative mt-10  opacity-100 duration-300'
+                  : 'absolute mt-10 opacity-0'
+            )}
+         >
             <div className='grid grid-cols-1 lg:grid-cols-2  mb-5'>
                <div className='lg:mr-10 mb-5 lg:mb-0'>
                   <Image
@@ -99,7 +105,7 @@ export default function Project({
                      width={600}
                      height={300}
                      sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                     className='object-cover '
+                     className='object-cover'
                   />
                </div>
                <div className='flex flex-col gap-4 lg:gap-8  '>
