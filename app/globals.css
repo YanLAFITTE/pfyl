@@ -7,6 +7,8 @@ body {
    scroll-behavior: smooth;
    -ms-overflow-style: none; /* Internet Explorer 10+ */
    scrollbar-width: none; /* Firefox */
+   box-sizing: content-box;
+   width: 100%;
 }
 
 body::-webkit-scrollbar {
@@ -55,5 +57,3 @@ body::-webkit-scrollbar {
    width: 100%;
    object-fit: cover;
 }
-
-
