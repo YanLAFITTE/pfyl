@@ -25,7 +25,7 @@ const Header = ({
 }: HeaderProps) => {
    return (
       <Container>
-         <div className='flex items-center justify-between '>
+         <div className='flex items-center justify-between ' id='top'>
             <Link
                href={'/'}
                aria-label='Home'

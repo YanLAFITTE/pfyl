@@ -9,7 +9,7 @@ interface FooterProps {
 const Footer = ({ footerRef }: FooterProps) => {
    const scrollUp = () => {
       setTimeout(() => {
-         window.scroll({ top: 0, behavior: 'smooth' });
+         document.querySelector('#top')?.scrollIntoView({ behavior: 'smooth' });
       }, 100);
    };
    return (

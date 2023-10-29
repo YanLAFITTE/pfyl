@@ -63,7 +63,6 @@ const projects = [
 const SectionWork = () => {
    const [openProjects, setOpenProjects] = useState<number[]>([]);
    const handleProjectClick = (index: number) => {
-     
       if (openProjects.includes(index)) {
          setOpenProjects(
             openProjects.filter((projectIndex) => projectIndex !== index)
@@ -72,6 +71,15 @@ const SectionWork = () => {
          setOpenProjects([index]);
       }
    };
+
+   const scrollToWork = () => {
+      setTimeout(() => {
+         document
+            .querySelector('#work')
+            ?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+   };
+
    return (
       <div className='  bg-color_secondary text-color_main '>
          <Container>
@@ -85,13 +93,12 @@ const SectionWork = () => {
                   </h3>
                   <p className='text-lg lg:text-2xl sm:text-xl'>2022/2023</p>
                </div>
-               <Link
-                  href={'/#work'}
-                  scroll
+               <div
+                  onClick={scrollToWork}
                   className='cursor-pointer  items-center p-2.5 rounded-full group bg-color_main '
                >
                   <AiOutlineArrowDown className='text-xl lg:text-2xl  group-hover:scale-110 text-color_secondary ' />
-               </Link>
+               </div>
             </div>
             <div>
                <ul className='flex flex-col  pb-0 lg:pb-28  '>
