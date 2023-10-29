@@ -48,7 +48,7 @@ export default function Project({
             if (projectRef.current) {
                projectRef.current.scrollIntoView({ behavior: 'smooth' });
             }
-         }, 0);
+         }, 100);
       }
    };
 
@@ -100,6 +100,7 @@ export default function Project({
             <div className='grid grid-cols-1 lg:grid-cols-2  mb-5'>
                <div className='lg:mr-10 mb-5 lg:mb-0'>
                   <Image
+                     placeholder='empty'
                      src={src}
                      alt={title}
                      width={600}

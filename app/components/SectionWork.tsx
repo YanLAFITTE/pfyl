@@ -63,7 +63,7 @@ const projects = [
 const SectionWork = () => {
    const [openProjects, setOpenProjects] = useState<number[]>([]);
    const handleProjectClick = (index: number) => {
-      // Toggle the clicked project's index in the openProjects state
+     
       if (openProjects.includes(index)) {
          setOpenProjects(
             openProjects.filter((projectIndex) => projectIndex !== index)
@@ -94,7 +94,7 @@ const SectionWork = () => {
                </Link>
             </div>
             <div>
-               <ul className='flex flex-col  pb-24 lg:pb-28  '>
+               <ul className='flex flex-col  pb-0 lg:pb-28  '>
                   {projects.map((project, index) => {
                      return (
                         <FadeIn key={index}>
