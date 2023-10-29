@@ -12,7 +12,7 @@ const Footer = ({ footerRef }: FooterProps) => {
    };
    return (
       <div id='contact' ref={footerRef} className=''>
-         <footer className='fixed bottom-0  left-0 w-full text-color_secondary -z-[5] '>
+         <footer className='fixed -bottom-48 lg:-bottom-80  left-0 w-full text-color_secondary -z-[5] h-full'>
             <Container>
                <div className='flex lg:items-center sm:flex-row flex-col gap-6 lg:gap-12 justify-between pt-24 lg:pt-32 pb-12'>
                   <div className='text-3xl font-display sm:text-5xl lg:text-6xl font-semibold whitespace-nowrap'>
