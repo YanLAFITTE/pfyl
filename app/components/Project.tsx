@@ -92,13 +92,14 @@ export default function Project({
          </p>
          <div className={clsx(isOpen ? 'relative mt-10' : ' hidden', '')}>
             <div className='grid grid-cols-1 lg:grid-cols-2  mb-5'>
-               <div className='h-auto lg:mr-10 mb-5 lg:mb-0'>
+               <div className='lg:mr-10 mb-5 lg:mb-0'>
                   <Image
                      src={src}
                      alt={title}
-                     width={500}
-                     height={400}
-                     className='object-contain p-px bg-color_main  h-full w-full'
+                     width={600}
+                     height={300}
+                     sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                     className='object-cover '
                   />
                </div>
                <div className='flex flex-col gap-4 lg:gap-8  '>

@@ -27,7 +27,7 @@ export default function Home() {
                      href={'/#contact'}
                      className='underline inline-flex items-center text-2xl sm:text-3xl  lg:text-4xl font-display font-semibold py-8 lg:py-16 group w-full max-w-2xl'
                   >
-                     <FiArrowRight className='mr-2 group-hover:mr-8 duration-300 ease-in-out' />
+                     <FiArrowRight className='mr-2 lg:text-4xl  group-hover:mr-8 duration-300 ease-in-out' />
                      Get in touch
                   </Link>
                </FadeIn>
