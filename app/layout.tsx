@@ -17,9 +17,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
    return (
       <html
          lang='en'
-         className='h-full bg-color_main text-base antialiased text-color_main  font-display'
+         className='h-full  bg-color_main text-base antialiased text-color_main  font-display'
       >
-         <body className='flex flex-col bg-color_secondary min-h-full relative'>
+         <body className='flex flex-col '>
             <RootLayout>{children}</RootLayout>
          </body>
       </html>

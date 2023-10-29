@@ -68,7 +68,7 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({
             layout
             id={panelId}
             style={{ height: expanded ? 'auto' : 0 }}
-            className='relative z-50 overflow-hidden  '
+            className='relative z-50 overflow-hidden bg-color_secondary '
             aria-hidden={expanded ? undefined : 'true'}
             data-inert={expanded ? undefined : ''}
          >
