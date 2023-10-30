@@ -10,7 +10,7 @@ type FadeInStaggerProps = {
 
 const FadeInStaggerContext = createContext(false);
 
-const viewport = { once: true, margin: '0px 0px -100px' };
+const viewport = { once: true, margin: '0px 0px -150px' };
 
 const FadeIn: React.FC<FadeInProps> = (props) => {
    const shouldReduceMotion = useReducedMotion();
