@@ -19,7 +19,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
          lang='en'
          className='h-full  bg-color_main text-base antialiased text-color_main  font-display'
       >
-         <body>
+         <body className='h-full'>
             <RootLayout>{children}</RootLayout>
          </body>
       </html>
