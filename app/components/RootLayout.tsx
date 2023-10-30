@@ -13,9 +13,13 @@ import clsx from 'clsx';
 
 interface RootLayoutInnerProps {
    children: ReactNode;
+   footerRef: React.RefObject<HTMLDivElement>;
 }
 
-const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({ children }) => {
+const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({
+   children,
+   footerRef,
+}) => {
    const panelId = useId();
    const [expanded, setExpanded] = useState(false);
    const openRef = useRef<HTMLButtonElement | null>(null);
@@ -25,6 +29,11 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({ children }) => {
 
    const handleScrollToFooter = () => {
       setExpanded(false);
+      setTimeout(() => {
+         footerRef?.current?.scrollIntoView({
+            behavior: 'smooth',
+         });
+      }, 150);
    };
 
    return (
@@ -109,11 +118,7 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({ children }) => {
                         </div>
                      </li>
                   </Link>
-                  <Link
-                     href={'/#contact'}
-                     scroll
-                     onClick={handleScrollToFooter}
-                  >
+                  <Link href={'/#contact'} onClick={handleScrollToFooter}>
                      <li className='border-t-[1px]  border-color_main py-8 group flex items-center'>
                         <FiArrowRight className='text-3xl text-color_main  group-hover:opacity-100 opacity-0 -translate-x-10 group-hover:translate-x-0 duration-300 ease-in-out ' />
                         <div className='text-xl font-semibold  group-hover:ml-4 -ml-4    duration-300 ease-in-out uppercase  '>
@@ -154,11 +159,11 @@ interface RootLayoutProps {
 
 const RootLayout = ({ children }: RootLayoutProps) => {
    const pathName = usePathname();
-
+   const footerRef = useRef(null);
    return (
-      <RootLayoutInner key={pathName}>
+      <RootLayoutInner key={pathName} footerRef={footerRef}>
          {children}
-         <Footer />
+         <Footer footerRef={footerRef} />
       </RootLayoutInner>
    );
 };
