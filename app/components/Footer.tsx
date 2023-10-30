@@ -2,16 +2,11 @@ import Link from 'next/link';
 import Container from '../components/Container';
 import { AiOutlineArrowUp } from 'react-icons/ai';
 
-interface FooterProps {
-   footerRef?: React.RefObject<HTMLDivElement>;
-}
 
-const Footer = ({ footerRef }: FooterProps) => {
-   const scrollUp = () => {
-      window.scroll({ top: 0 });
-   };
+
+const Footer = () => {
    return (
-      <div id='contact' ref={footerRef} className=''>
+      <div id='contact' className=''>
          <footer className='fixed bottom-0  left-0 w-full text-color_secondary -z-[5] '>
             <Container>
                <div className='flex lg:items-center sm:flex-row flex-col gap-6 lg:gap-12 justify-between pt-24 lg:pt-32 pb-12'>
@@ -74,12 +69,12 @@ const Footer = ({ footerRef }: FooterProps) => {
                      <p>&copy;2023</p>
                   </div>
 
-                  <div
+                  <Link href={'/'}
                      className='cursor-pointer  items-center p-2.5 rounded-full group bg-color_secondary '
-                     onClick={scrollUp}
+                   
                   >
                      <AiOutlineArrowUp className='text-xl lg:text-2xl group-hover:scale-110 text-color_main ' />
-                  </div>
+                  </Link>
                </div>
             </Container>
          </footer>
