@@ -8,7 +8,7 @@ interface FooterProps {
 
 const Footer = ({ footerRef }: FooterProps) => {
    const scrollUp = () => {
-      window.scroll({ top: 0, behavior: 'smooth' });
+      window.scroll({ top: 0 });
    };
    return (
       <div id='contact' ref={footerRef} className=''>
