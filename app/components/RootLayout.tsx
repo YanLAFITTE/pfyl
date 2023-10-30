@@ -30,10 +30,8 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({
    const handleScrollToFooter = () => {
       setExpanded(false);
       setTimeout(() => {
-         footerRef?.current?.scrollIntoView({
-            behavior: 'smooth',
-         });
-      }, 200);
+         footerRef?.current?.scrollIntoView();
+      }, 150);
    };
 
    return (
