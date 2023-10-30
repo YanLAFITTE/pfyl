@@ -122,7 +122,7 @@ export default function Project({
                href={link}
                rel='noopener noreferrer'
                target='_blank'
-               className='absolute bottom-0 right-0 p-3 max-w-[150px] bg-color_secondary text-color_main border border-color_main flex justify-center items-center  whitespace-nowrap hover:bg-color_main hover:text-color_secondary '
+               className='absolute bottom-0 right-0 p-3 max-w-[150px] bg-color_secondary text-color_main border border-color_main flex justify-center items-center  whitespace-nowrap hover:bg-color_main hover:text-color_secondary duration-150'
             >
                See Website
             </Link>
