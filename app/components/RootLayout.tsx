@@ -31,7 +31,7 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({
       setExpanded(false);
       setTimeout(() => {
          footerRef?.current?.scrollIntoView();
-      }, 150);
+      }, 180);
    };
 
    return (
