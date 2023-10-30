@@ -133,7 +133,7 @@ const RootLayoutInner: React.FC<RootLayoutInnerProps> = ({
          </motion.div>
          <motion.div
             layout
-            className='relative flex flex-auto overflow-hidden   bg-color_main text-color_secondary '
+            className='relative flex flex-auto overflow-hidden h-full  bg-color_main text-color_secondary '
          >
             <motion.div
                layout

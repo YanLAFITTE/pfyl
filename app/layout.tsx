@@ -17,9 +17,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
    return (
       <html
          lang='en'
-         className='h-full  bg-color_main text-base antialiased text-color_main  font-display'
+         className=' bg-color_main text-base antialiased text-color_main  font-display'
       >
-         <body className='h-full'>
+         <body className='overflow-scroll h-full '>
             <RootLayout>{children}</RootLayout>
          </body>
       </html>
