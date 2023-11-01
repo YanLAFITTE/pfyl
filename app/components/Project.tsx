@@ -79,7 +79,7 @@ export default function Project({
          <div className='flex items-center w-full justify-between'>
             <div className='flex items-center  '>
                <FiArrowRight className='text-3xl lg:text-4xl   group-hover:opacity-100 opacity-0 -translate-x-10 group-hover:translate-x-0 duration-300 ease-in-out -mt-2' />
-               <h2 className=' text-2xl lg:text-4xl group-hover:pl-5 duration-300 ease -mx-6  group-hover:mx-0 mb-2'>
+               <h2 className=' text-2xl lg:text-4xl group-hover:pl-5 duration-300 ease -ml-8 lg:-ml-10  group-hover:-ml-2 mb-2 '>
                   {title}
                </h2>
             </div>
