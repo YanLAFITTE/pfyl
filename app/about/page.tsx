@@ -1,10 +1,10 @@
-'use client';
-import React, { useEffect, useRef } from 'react';
-import Container from '../components/Container';
-import FadeIn from '../components/Fadein';
-import Link from 'next/link';
-import SectionSkill from '../components/SectionSkill';
-import { FiArrowRight } from 'react-icons/fi';
+"use client";
+import React, { useEffect, useRef } from "react";
+import Container from "../components/Container";
+import FadeIn from "../components/Fadein";
+import Link from "next/link";
+import SectionSkill from "../components/SectionSkill";
+import { FiArrowRight } from "react-icons/fi";
 
 const phrase = ` with 2 years of hands-on experience in web development, my skill set spans across an array of coding languages, such as HTML5, CSS3, and JavaScript. I specialize in popular frameworks like React and Next.js, and I have solid skills in back-end development, using technologies like Node.js and Express. I consider myself a technical enthusiast, dedicated to crafting efficient solutions. My commitment to continuous learning ensures me to stay at the forefront of industry trends, making me an invaluable asset to any web development project.`;
 
@@ -26,7 +26,7 @@ const AboutPage = () => {
                   </div>
 
                   <Link
-                     href='/yanlafitte_cv.pdf'
+                     href='/yanlafitte_cv_nov23.pdf'
                      target='_blank'
                      rel='noopener noreferrer'
                      className='underline inline-flex items-center text-2xl sm:text-3xl  lg:text-4xl font-display font-semibold pb-8 pt-6 lg:pt-12 lg:pb-16 group max-w-2xl'
