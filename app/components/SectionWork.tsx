@@ -1,61 +1,77 @@
-'use client';
-import React, { useState } from 'react';
-import FadeIn from './Fadein';
-import Container from '../components/Container';
-import { AiOutlineArrowDown } from 'react-icons/ai';
-import Link from 'next/link';
-import Project from './Project';
+"use client";
+import React, { useState } from "react";
+import FadeIn from "./Fadein";
+import Container from "../components/Container";
+import { AiOutlineArrowDown } from "react-icons/ai";
+import Link from "next/link";
+import Project from "./Project";
 
 const projects = [
    {
-      title: 'Photography app',
-      src: '/photography.png',
-      link: 'https://photography-portfolio-dun.vercel.app/portfolio',
-      technos: ['React', 'Next', 'TypeScript', 'Tailwind', 'unspalsh API'],
-      year: '2023',
+      title: "Next Ecommerce",
+      src: "/next-ecommerce.png",
+      link: "https://next-ecommerce-yanlafitte.vercel.app/",
+      technos: [
+         "React",
+         "Next",
+         "TypeScript",
+         "Tailwind",
+         "Daisyui",
+         "Prisma",
+         "MongoDB",
+      ],
+      year: "2023",
       dev: true,
    },
    {
-      title: 'Dimitri Iovane',
-      src: '/dic.png',
-      link: 'https://dimitri-art.vercel.app/',
-      technos: ['React', 'Next', 'TypeScript', 'Tailwind', 'Sanity CMS'],
-      year: '2023',
+      title: "Photography app",
+      src: "/photography.png",
+      link: "https://photography-portfolio-dun.vercel.app/portfolio",
+      technos: ["React", "Next", "TypeScript", "Tailwind", "unspalsh API"],
+      year: "2023",
+      dev: true,
+   },
+   {
+      title: "Dimitri Iovane",
+      src: "/dic.png",
+      link: "https://dimitri-art.vercel.app/",
+      technos: ["React", "Next", "TypeScript", "Tailwind", "Sanity CMS"],
+      year: "2023",
       dev: true,
       design: true,
    },
    {
-      title: 'Contact page',
-      src: '/agence-web.png',
-      link: 'https://agency-contact-yanlafitte.vercel.app/contact',
-      technos: ['React', 'Sass'],
-      year: '2023',
+      title: "Contact page",
+      src: "/agence-web.png",
+      link: "https://agency-contact-yanlafitte.vercel.app/contact",
+      technos: ["React", "Sass"],
+      year: "2023",
       dev: true,
    },
    {
-      title: 'Kaza',
-      src: '/kaza1.png',
-      link: 'https://kasa-app-yanlafitte.vercel.app/',
-      technos: ['React', 'Sass'],
-      year: '2022',
+      title: "Kaza",
+      src: "/kaza1.png",
+      link: "https://kasa-app-yanlafitte.vercel.app/",
+      technos: ["React", "Sass"],
+      year: "2022",
       dev: true,
    },
    {
-      title: 'Stellar App',
-      src: '/stellar.png',
-      link: 'https://stellar-app.vercel.app/',
-      technos: ['HTML', 'CSS', 'JS', 'Nasa API'],
-      year: '2023',
+      title: "Stellar App",
+      src: "/stellar.png",
+      link: "https://stellar-app.vercel.app/",
+      technos: ["HTML", "CSS", "JS", "Nasa API"],
+      year: "2023",
       dev: true,
       design: true,
    },
 
    {
-      title: 'OhMyFood!',
-      src: '/ohmyfood.png',
-      link: 'https://yanlafitte.github.io/P3_CODE/index.html',
-      technos: ['HTML', 'CSS'],
-      year: '2022',
+      title: "OhMyFood!",
+      src: "/ohmyfood.png",
+      link: "https://yanlafitte.github.io/P3_CODE/index.html",
+      technos: ["HTML", "CSS"],
+      year: "2022",
       dev: true,
    },
 ];
@@ -86,7 +102,7 @@ const SectionWork = () => {
                   <p className='text-lg lg:text-2xl sm:text-xl'>2022/2023</p>
                </div>
                <Link
-                  href={'/#work'}
+                  href={"/#work"}
                   scroll
                   className='cursor-pointer  items-center p-2.5 rounded-full group bg-color_main '
                >
