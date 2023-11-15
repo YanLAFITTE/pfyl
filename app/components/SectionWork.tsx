@@ -12,11 +12,10 @@ const projects = [
       src: "/next-ecommerce.png",
       link: "https://next-ecommerce-yanlafitte.vercel.app/",
       technos: [
-         "React",
          "Next",
          "TypeScript",
-         "Tailwind",
          "Daisyui",
+         "NextAuth",
          "Prisma",
          "MongoDB",
       ],
