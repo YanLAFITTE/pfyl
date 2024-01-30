@@ -26,7 +26,7 @@ const AboutPage = () => {
                   </div>
 
                   <Link
-                     href='/yanlafitte_cv_nov23.pdf'
+                     href='/yanlafitte-cv.pdf'
                      target='_blank'
                      rel='noopener noreferrer'
                      className='underline inline-flex items-center text-2xl sm:text-3xl  lg:text-4xl font-display font-semibold pb-8 pt-6 lg:pt-12 lg:pb-16 group max-w-2xl'
